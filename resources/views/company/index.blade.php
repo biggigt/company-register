@@ -22,8 +22,8 @@
             <td>{{ $company->lastname }}</td>
             <td>{{ $company->department }}</td>
             <td>{{ $company->phone }}</td>
-            <td><a href="{{route('companies.edit',['id'=>$company->id])}}" class = "btn btn-info">Edit</a></td>
-            <td><a href="{{route('companies.destroy',['id'=>$company->id])}}" class = "btn btn-danger">Delete</a></td>
+            <td><a href="{{route('companies.edit',['id'=>$company->id])}}" class = "btn btn-info"><i class="edit outline icon"></i></a></td>
+            <td><a href="{{route('companies.destroy',['id'=>$company->id])}}" class = "btn btn-danger"><i class="trash alternate outline icon"></i></a></td>
           </tr>
         @endforeach
       </table>
