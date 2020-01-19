@@ -7,23 +7,27 @@
         <thead>
           <tr>
             <th>ID</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Department</th>
-            <th>Phone No.</th>
-            <th>Actions</th>
-            <th>Actions</th>
+            <th>Business type</th>
+            <th>Name</th>
+            <th>Registration number</th>
+            <th>Facility type</th>
+            <th>Subject acting</th>
+            <th>Subject owner</th>
+            <th>Options</th>
           </tr>
         </thead>
         @foreach($companies as $company)
           <tr class = "text-center">
             <td>{{ $company->id }}</td>
-            <td>{{ $company->firstname }}</td>
-            <td>{{ $company->lastname }}</td>
-            <td>{{ $company->department }}</td>
-            <td>{{ $company->phone }}</td>
-            <td><a href="{{route('companies.edit',['id'=>$company->id])}}" class = "btn btn-info"><i class="edit outline icon"></i></a></td>
-            <td><a href="{{route('companies.destroy',['id'=>$company->id])}}" class = "btn btn-danger"><i class="trash alternate outline icon"></i></a></td>
+            <td>{{ $company->business_type }}</td>
+            <td>{{ $company->name }}</td>
+            <td>{{ $company->regnumber }}</td>
+            <td>{{ $company->facility_type }}</td>
+            <td>{{ $company->subject_acting }}</td>
+            <td>{{ $company->subject_owner }}</td>
+            <td><a href="{{route('companies.edit',['id'=>$company->id])}}" class = "btn btn-info"><i class="edit outline icon"></i></a>
+                <a href="{{route('companies.destroy',['id'=>$company->id])}}" class = "btn btn-danger"><i class="trash alternate outline icon"></i></a></td>
+            
           </tr>
         @endforeach
       </table>

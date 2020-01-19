@@ -2,7 +2,6 @@
 @section('title','Create Company')
 @section('content')
   <div class="ui container">
-    <div class="ui divider"></div>
     <div class="ui text container">
       <div class="ui message">
         <div class="header">

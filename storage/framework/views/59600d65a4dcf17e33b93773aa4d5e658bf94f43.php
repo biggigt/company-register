@@ -13,12 +13,12 @@
 	<div class="ui attached stackable menu">
 	  <div class="ui container">
 	  	<div class="item">
-			<img src="assets/images/logo1.jpg">
+			<img src="/assets/images/logo1.jpg">
 		</div>
 	    <a class="item" href="/">
 	      <i class="home icon"></i> Home
 	    </a>
-	    <a class="item">
+	    <a class="item" href="/companies">
 	      <i class="grid layout icon"></i> Browse
 	    </a>
 	    <a class="item">
@@ -36,6 +36,7 @@
 	    <div class="right item">
 	      <div class="ui input"><input type="text" placeholder="Search..."></div>
 	    </div>
+	    <div class="item"><?php echo e(Auth::user()->name); ?></div>
 	  </div>
 	</div>
 <div class="ui container" style="padding-top: 20px;">
