@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>@yield('title')</title>
+  <title><?php echo $__env->yieldContent('title'); ?></title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="{{ asset('assets/semantic/semantic.min.css') }}">
+  <link rel="stylesheet" href="<?php echo e(asset('assets/semantic/semantic.min.css')); ?>">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-  <script src="{{ asset('assets/semantic/semantic.min.js') }}"></script>
+  <script src="<?php echo e(asset('assets/semantic/semantic.min.js')); ?>"></script>
 </head>
 <body>
 	<div class="ui attached stackable menu">
@@ -40,8 +40,8 @@
 	  </div>
 	</div>
 <div class="ui container" style="padding-top: 20px;">
-  @yield('content')
+  <?php echo $__env->yieldContent('content'); ?>
 </div>
 </body>
-@yield('scripts')
-</html>
+<?php echo $__env->yieldContent('scripts'); ?>
+</html><?php /**PATH D:\Reestr code\company-register\company-register\resources\views/layouts/master.blade.php ENDPATH**/ ?>

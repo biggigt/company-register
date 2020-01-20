@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Company;
+use App\business_type;
 
 class CompanyController extends Controller
 {
@@ -26,7 +27,8 @@ class CompanyController extends Controller
     public function create()
     {
         //Return view to create company
-        return view('company.create');
+        $business_types= business_type::all(['id','code','business_type_name']);
+        return view('company.create',['business_types'=>$business_types]);
     }
     /**
      * Store a newly created resource in storage.
@@ -41,7 +43,7 @@ class CompanyController extends Controller
         $company = new Company();
         //input method is used to get the value of input with its
         //name specified
-        $company->business_type = $request->input('business_type');
+        $company->business_type = $request->get('business_type_dropdown');
         $company->name = $request->input('name');
         $company->regnumber = $request->input('regnumber');
         $company->facility_type = $request->input('facility_type');

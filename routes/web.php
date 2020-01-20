@@ -25,3 +25,10 @@ Route::post('/companies/update','CompanyController@update')->name('companies.upd
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/businesstypes', 'BusinesstypeController@index')->name('businesstype.index');
+Route::get('/businesstypes/{id}/edit', 'BusinesstypeController@edit')->name('businesstype.edit');
+Route::get('/businesstypes/{id}/delete','BusinesstypeController@destroy')->name('businesstype.destroy');
+Route::get('/businesstypes/create','BusinesstypeController@create')->name('businesstype.create');
+Route::post('/businesstypes/create','BusinesstypeController@store')->name('businesstype.store');
+Route::post('/businesstypes/update','BusinesstypeController@update')->name('businesstype.update');

@@ -1,6 +1,5 @@
-@extends('layouts.master')
-@section('title','Create Company')
-@section('content')
+<?php $__env->startSection('title','Create Company'); ?>
+<?php $__env->startSection('content'); ?>
   <div class="ui container">
     <div class="ui text container">
       <div class="ui message">
@@ -9,15 +8,15 @@
         </div>
         <p>We just updated our privacy policy here to better service our customers. We recommend reviewing the changes.</p>
       </div>
-      <form class="ui form" action="{{route('companies.store')}}" method = "post">
-        @csrf
+      <form class="ui form" action="<?php echo e(route('companies.store')); ?>" method = "post">
+        <?php echo csrf_field(); ?>
         <div class="field">
           <label for="business_type_dropdown">Business type:</label>
           <select id="business_type_dropdown" name="business_type_dropdown" class="ui dropdown">
             <option value="">Выберите ОПФ</option>
-            @foreach($business_types as $business_type)
-              <option value="{{ $business_type->id }}">{{ $business_type->code }}</option>
-            @endforeach
+            <?php $__currentLoopData = $business_types; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $business_type): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+              <option value="<?php echo e($business_type->id); ?>"><?php echo e($business_type->code); ?></option>
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
           </select>
         </div>
         <div class="field">
@@ -44,11 +43,13 @@
       </form>
     </div>
   </div>
-@endsection
-@section('scripts')
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('scripts'); ?>
 <script type="text/javascript">
   $('.ui.dropdown')
     .dropdown()
   ;
 </script>
-@stop
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\Reestr code\company-register\company-register\resources\views/company/create.blade.php ENDPATH**/ ?>
