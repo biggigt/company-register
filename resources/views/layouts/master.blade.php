@@ -36,7 +36,7 @@
 	    <div class="right item">
 	      <div class="ui input"><input type="text" placeholder="Search..."></div>
 	    </div>
-	    <div class="item">{{Auth::user()->name}}</div>
+	    <div class="item">Username</div>
 	  </div>
 	</div>
 <div class="ui container" style="padding-top: 20px;">
