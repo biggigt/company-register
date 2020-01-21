@@ -1,9 +1,12 @@
 @extends('layouts.master')
 @section('title','Edit Company')
+
 @section('content')
   <div class="row">
     <div class="ui text container">
-      
+      @component('notification')
+          <strong>Whoops!</strong> Something went wrong!
+      @endcomponent
       <form class="ui form" action="{{route('companies.update')}}" method = "post">
         @csrf
         <div class="field">
@@ -36,3 +39,18 @@
     </div>
   </div>
 @endsection
+@section('scripts')
+<script type="text/javascript">
+  $('.message .close')
+  .on('click', function() {
+    $(this)
+      .closest('.message')
+      .transition('fade')
+    ;
+  })
+  ;
+  $('.message')
+  .delay(5000).fadeout();
+</script>
+@stop
+
