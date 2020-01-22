@@ -64,6 +64,10 @@ class CompanyController extends Controller
         $company = Company::find($id);
         return view('company.edit',['company'=> $company]);
     }
+    public function view($id){
+        $company = Company::find($id);
+        return view('company.view',['company'=> $company]);
+    }
     /**
      * Update the specified resource in storage.
      *

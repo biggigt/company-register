@@ -13,7 +13,7 @@
         @csrf
         <div class="field">
           <label for="business_type_dropdown">Business type:</label>
-          <select id="business_type_dropdown" name="business_type_dropdown" class="ui dropdown">
+          <select id="business_type_dropdown" name="business_type_dropdown" class="ui search dropdown">
             <option value="">Выберите ОПФ</option>
             @foreach($business_types as $business_type)
               <option value="{{ $business_type->id }}">{{ $business_type->code }}</option>
@@ -45,10 +45,3 @@
     </div>
   </div>
 @endsection
-@section('scripts')
-<script type="text/javascript">
-  $('.ui.dropdown')
-    .dropdown()
-  ;
-</script>
-@stop

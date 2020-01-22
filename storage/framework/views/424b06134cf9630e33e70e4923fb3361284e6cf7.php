@@ -3,17 +3,13 @@
 	<div class="ui two column grid">
 		<div class="four wide column">
 			<div class="ui vertical menu">
-			  <a class="item">
+			  <a class="item" href="/businesstypes">
 			    <h4 class="ui header">View all</h4>
 			    <p>Check out our new promotions</p>
 			  </a>
-			  <a class="item">
+			  <a class="item" href="/businesstypes/create">
 			    <h4 class="ui header">Create</h4>
 			    <p>Check out our collection of coupons</p>
-			  </a>
-			  <a class="item">
-			    <h4 class="ui header">Rebates</h4>
-			    <p>Visit our rebate forum for information on claiming rebates</p>
 			  </a>
 			</div>
 		</div>

@@ -15,7 +15,7 @@
         </div>
         <div class="field">
           <label for="name">Name:</label>
-          <input type="text" name = "name" id = "name" class="form-control" required value = "{{$company->business_type}}">
+          <input type="text" name = "name" id = "name" class="form-control" required value = "{{$company->name}}">
         </div>
         <div class="field">
           <label for="regnumber">Registration #:</label>
@@ -49,8 +49,6 @@
     ;
   })
   ;
-  $('.message')
-  .delay(5000).fadeout();
 </script>
 @stop
 

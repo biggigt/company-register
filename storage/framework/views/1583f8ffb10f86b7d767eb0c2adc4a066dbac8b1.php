@@ -12,7 +12,7 @@
         <?php echo csrf_field(); ?>
         <div class="field">
           <label for="business_type_dropdown">Business type:</label>
-          <select id="business_type_dropdown" name="business_type_dropdown" class="ui dropdown">
+          <select id="business_type_dropdown" name="business_type_dropdown" class="ui search dropdown">
             <option value="">Выберите ОПФ</option>
             <?php $__currentLoopData = $business_types; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $business_type): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
               <option value="<?php echo e($business_type->id); ?>"><?php echo e($business_type->code); ?></option>
@@ -43,13 +43,6 @@
       </form>
     </div>
   </div>
-<?php $__env->stopSection(); ?>
-<?php $__env->startSection('scripts'); ?>
-<script type="text/javascript">
-  $('.ui.dropdown')
-    .dropdown()
-  ;
-</script>
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('layouts.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\Reestr code\company-register\company-register\resources\views/company/create.blade.php ENDPATH**/ ?>

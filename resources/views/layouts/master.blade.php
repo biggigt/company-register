@@ -18,11 +18,16 @@
 	    <a class="item" href="/">
 	      <i class="home icon"></i> Главная
 	    </a>
-	    <a class="item" href="/companies">
-	      <i class="list ol icon"></i> Предприятия
-	    </a>
+	    <div class="ui simple dropdown item">
+	      Предприятия
+	      <i class="dropdown icon"></i>
+	      <div class="menu">
+	        <a class="item" href="/companies"><i class="edit icon"></i> View</a>
+	        <a class="item" href="/create"><i class="globe icon"></i> Add</a>
+	      </div>
+	    </div>
 	    <a class="item">
-	      <i class="mail icon"></i> Дополнительно
+	      <i class="mail icon"></i> Реестры
 	    </a>
 	    <div class="ui simple dropdown item">
 	      Справочники
