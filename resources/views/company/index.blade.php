@@ -1,6 +1,15 @@
 @extends('layouts.master')
 @section('title','Companies list')
 @section('content')
+@if (session('info'))
+  <div class="ui success message notification">
+    <i class="close icon"></i>
+    <div class="header">
+      {{ session('info') }}
+    </div>
+    <p>You may now log-in with the username you have chosen</p>
+  </div>
+@endif
   <div class="row">
     <div class="col-sm-12">
       <table class="ui celled table">

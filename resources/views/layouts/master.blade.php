@@ -61,7 +61,7 @@
 		                        @csrf
 		                    </form>
 		                </div>
-	            	</div>
+	            	</div>	
 	            </div>
             </div>
         @endguest
@@ -76,5 +76,8 @@
   $('.ui.dropdown')
     .dropdown()
   ;
+  $(document).ready(function(){
+  	$(".notification").delay(5000).slideUp(300);
+    });
 </script>
 </html>

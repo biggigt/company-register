@@ -1,4 +1,3 @@
-
 <?php $__env->startSection('title','Edit Company'); ?>
 
 <?php $__env->startSection('content'); ?>
@@ -15,7 +14,7 @@
         </div>
         <div class="field">
           <label for="name">Name:</label>
-          <input type="text" name = "name" id = "name" class="form-control" required value = "<?php echo e($company->business_type); ?>">
+          <input type="text" name = "name" id = "name" class="form-control" required value = "<?php echo e($company->name); ?>">
         </div>
         <div class="field">
           <label for="regnumber">Registration #:</label>
@@ -49,8 +48,6 @@
     ;
   })
   ;
-  $('.message')
-  .delay(5000).fadeout();
 </script>
 <?php $__env->stopSection(); ?>
 

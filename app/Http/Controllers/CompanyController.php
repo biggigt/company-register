@@ -79,10 +79,12 @@ class CompanyController extends Controller
     {
         //Retrieve the company and update
         $company = Company::find($request->input('id'));
-        $company->firstname = $request->input('firstname');
-        $company->lastname = $request->input('lastname');
-        $company->department = $request->input('department');
-        $company->phone = $request->input('phone');
+        $company->business_type = $request->input('business_type');
+        $company->name = $request->input('name');
+        $company->regnumber = $request->input('regnumber');
+        $company->facility_type = $request->input('facility_type');
+        $company->subject_acting = $request->input('subject_acting');
+        $company->subject_owner = $request->input('subject_owner');
         $company->save(); //persist the data
         return redirect()->route('companies.index')->with('info','Company Updated Successfully');
     }

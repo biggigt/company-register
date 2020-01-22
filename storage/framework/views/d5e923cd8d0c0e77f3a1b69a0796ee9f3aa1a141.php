@@ -1,13 +1,21 @@
-
 <?php $__env->startSection('title','Companies list'); ?>
 <?php $__env->startSection('content'); ?>
+<?php if(session('info')): ?>
+  <div class="ui success message notification">
+    <i class="close icon"></i>
+    <div class="header">
+      <?php echo e(session('info')); ?>
+
+    </div>
+    <p>You may now log-in with the username you have chosen</p>
+  </div>
+<?php endif; ?>
   <div class="row">
     <div class="col-sm-12">
       <table class="ui celled table">
         <thead>
           <tr>
             <th>ID</th>
-            <th>Business type</th>
             <th>Name</th>
             <th>Registration number</th>
             <th>Facility type</th>
@@ -19,13 +27,13 @@
         <?php $__currentLoopData = $companies; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $company): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
           <tr class = "text-center">
             <td><?php echo e($company->id); ?></td>
-            <td><?php echo e($company->business_type); ?></td>
-            <td><?php echo e($company->name); ?></td>
+            <td><?php echo e($company->business_type); ?> "<?php echo e($company->name); ?>"</td>
             <td><?php echo e($company->regnumber); ?></td>
             <td><?php echo e($company->facility_type); ?></td>
             <td><?php echo e($company->subject_acting); ?></td>
             <td><?php echo e($company->subject_owner); ?></td>
-            <td><a href="<?php echo e(route('companies.edit',['id'=>$company->id])); ?>" class = "btn btn-info"><i class="edit outline icon"></i></a>
+            <td><a href="<?php echo e(route('companies.view',['id'=>$company->id])); ?>" class = "btn btn-info"><i class="folder open outline icon"></i></a>
+              <a href="<?php echo e(route('companies.edit',['id'=>$company->id])); ?>" class = "btn btn-info"><i class="edit outline icon"></i></a>
                 <a href="<?php echo e(route('companies.destroy',['id'=>$company->id])); ?>" class = "btn btn-danger"><i class="trash alternate outline icon"></i></a></td>
             
           </tr>
