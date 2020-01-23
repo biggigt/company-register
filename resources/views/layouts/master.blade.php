@@ -18,24 +18,24 @@
 	    <a class="item" href="/">
 	      <i class="home icon"></i> Главная
 	    </a>
-	    <div class="ui simple dropdown item">
-	      Предприятия
-	      <i class="dropdown icon"></i>
-	      <div class="menu">
-	        <a class="item" href="/companies"><i class="edit icon"></i> View</a>
-	        <a class="item" href="/create"><i class="globe icon"></i> Add</a>
-	      </div>
-	    </div>
 	    <a class="item">
-	      <i class="mail icon"></i> Реестры
+	      <i class="table icon"></i> Реестры
 	    </a>
 	    <div class="ui simple dropdown item">
-	      Справочники
+	      <i class="building icon"></i> Предприятия
 	      <i class="dropdown icon"></i>
 	      <div class="menu">
-	        <a class="item" href="/businesstypes"><i class="edit icon"></i> Business type</a>
-	        <a class="item"><i class="globe icon"></i> Choose Language</a>
-	        <a class="item"><i class="settings icon"></i> Account Settings</a>
+	        <a class="item" href="/companies"><i class="bars icon"></i> Просмотр</a>
+	        <a class="item" href="/create"><i class="plus square outline icon"></i> Добавить</a>
+	      </div>
+	    </div>
+	    <div class="ui simple dropdown item">
+	      <i class="clipboard outline icon"></i> Справочники
+	      <i class="dropdown icon"></i>
+	      <div class="menu">
+	        <a class="item" href="/businesstypes"><i class="edit icon"></i> ОПФ</a>
+	        <a class="item" href="/registrytypes"><i class="globe icon"></i> Реестры</a>
+	        <a class="item" href="/facility"><i class="settings icon"></i> Виды предприятий</a>
 	      </div>
 	    </div>
 	    
@@ -68,7 +68,12 @@
 	  </div>
 	</div>
 <div class="ui container" style="padding-top: 20px;">
-  @yield('content')
+	@if (session('info'))
+		@component('notification')
+			{{ session('info') }}
+		@endcomponent
+	@endif
+  	@yield('content')
 </div>
 </body>
 @yield('scripts')
@@ -77,7 +82,7 @@
     .dropdown()
   ;
   $(document).ready(function(){
-  	$(".notification").delay(5000).slideUp(300);
+  	$(".notification").delay(4000).slideUp(300);
     });
 </script>
 </html>

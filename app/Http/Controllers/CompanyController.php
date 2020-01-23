@@ -46,6 +46,7 @@ class CompanyController extends Controller
         $company->business_type = $request->get('business_type_dropdown');
         $company->name = $request->input('name');
         $company->regnumber = $request->input('regnumber');
+        $company->address = $request->input('address');
         $company->facility_type = $request->input('facility_type');
         $company->subject_acting = $request->input('subject_acting');
         $company->subject_owner = $request->input('subject_owner');
@@ -82,6 +83,7 @@ class CompanyController extends Controller
         $company->business_type = $request->input('business_type');
         $company->name = $request->input('name');
         $company->regnumber = $request->input('regnumber');
+        $company->address = $request->input('address');
         $company->facility_type = $request->input('facility_type');
         $company->subject_acting = $request->input('subject_acting');
         $company->subject_owner = $request->input('subject_owner');

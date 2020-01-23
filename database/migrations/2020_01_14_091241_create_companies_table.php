@@ -19,6 +19,7 @@ class CreateCompaniesTable extends Migration
             $table->string('name');
             $table->string('regnumber');
             $table->string('facility_type');
+            $table->string('address');
             $table->integer('subject_acting');
             $table->integer('subject_owner');
             $table->timestamps();

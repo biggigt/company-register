@@ -3,9 +3,6 @@
 <?php $__env->startSection('content'); ?>
   <div class="row">
     <div class="ui text container">
-      <?php $__env->startComponent('notification'); ?>
-          <strong>Whoops!</strong> Something went wrong!
-      <?php echo $__env->renderComponent(); ?>
       <form class="ui form" action="<?php echo e(route('companies.update')); ?>" method = "post">
         <?php echo csrf_field(); ?>
         <div class="field">
@@ -14,11 +11,15 @@
         </div>
         <div class="field">
           <label for="name">Name:</label>
-          <input type="text" name = "name" id = "name" class="form-control" required value = "<?php echo e($company->business_type); ?>">
+          <input type="text" name = "name" id = "name" class="form-control" required value = "<?php echo e($company->name); ?>">
         </div>
         <div class="field">
           <label for="regnumber">Registration #:</label>
           <input type="text" name = "regnumber" id = "regnumber" class="form-control" required value = "<?php echo e($company->regnumber); ?>">
+        </div>
+        <div class="field">
+          <label for="address">Full address:</label>
+          <input type="text" name = "address" id = "address" class="form-control" required value = "<?php echo e($company->address); ?>">
         </div>
         <div class="field">
           <label for="facility_type">Type of facility:</label>

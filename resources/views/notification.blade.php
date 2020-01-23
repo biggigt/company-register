@@ -1,7 +1,7 @@
-<div class="ui warning message">
-  <i class="close icon"></i>
-  <div class="header">
-    You must register before you can do that!
-  </div>
-  {{ $slot }}
+<div class="ui success message notification">
+	<i class="close icon"></i>
+	<div class="header">
+	  Операция выполнена успешно.
+	</div>
+	<p>{{ $slot }}</p>
 </div>

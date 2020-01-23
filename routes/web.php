@@ -41,3 +41,10 @@ Route::get('/registrytypes/create','RegistryController@create')->name('registry.
 Route::post('/registrytypes/create','RegistryController@store')->name('registry.store');
 Route::post('/registrytypes/update','RegistryController@update')->name('registry.update');
 Route::post('/addtoregistry','RegistryController@add_to_registry')->name('registry.addcompany');
+// facility types
+Route::get('/facility', 'FacilityController@index')->name('facility.index');
+Route::get('/facility/{id}/edit', 'FacilityController@edit')->name('facility.edit');
+Route::get('/facility/{id}/delete','FacilityController@destroy')->name('facility.destroy');
+Route::get('/facility/create','FacilityController@create')->name('facility.create');
+Route::post('/facility/create','FacilityController@store')->name('facility.store');
+Route::post('/facility/update','FacilityController@update')->name('facility.update');

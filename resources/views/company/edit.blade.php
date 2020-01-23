@@ -4,9 +4,6 @@
 @section('content')
   <div class="row">
     <div class="ui text container">
-      @component('notification')
-          <strong>Whoops!</strong> Something went wrong!
-      @endcomponent
       <form class="ui form" action="{{route('companies.update')}}" method = "post">
         @csrf
         <div class="field">
@@ -20,6 +17,10 @@
         <div class="field">
           <label for="regnumber">Registration #:</label>
           <input type="text" name = "regnumber" id = "regnumber" class="form-control" required value = "{{$company->regnumber}}">
+        </div>
+        <div class="field">
+          <label for="address">Full address:</label>
+          <input type="text" name = "address" id = "address" class="form-control" required value = "{{$company->address}}">
         </div>
         <div class="field">
           <label for="facility_type">Type of facility:</label>

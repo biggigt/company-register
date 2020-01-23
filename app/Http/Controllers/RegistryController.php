@@ -20,8 +20,8 @@ class RegistryController extends Controller
 
     public function store(Request $request){
     	$registryType = new registryType();
-    	$registryType->registryType = $request->input('');
-    	$registryType->registryDescription = $request->input('');
+    	$registryType->registryType = $request->input('registry_type_name');
+    	$registryType->registryDescription = $request->input('registry_type_description');
     	$registryType->save();
     	return redirect()->route('registry.viewtypes')->with('info','Registry type added successfully');
     }
@@ -33,8 +33,8 @@ class RegistryController extends Controller
 
     public function update(Request $request){
     	$registryType = registryType::find($request->input('id'));
-    	$registryType->registryType = $request->input('');
-    	$registryType->registryDescription = $request->input('');
+    	$registryType->registryType = $request->input('registry_type_name');
+    	$registryType->registryDescription = $request->input('registry_type_description');
     	$registryType->save();
     	return redirect()->route('registry.viewtypes')->with('info','Registry type updated successfully');
     }
