@@ -33,6 +33,20 @@
           <label for="subject_owner">Subject owner:</label>
           <input type="text" name = "subject_owner" id = "subject_owner" class="form-control" required value = "<?php echo e($company->subject_owner); ?>">
         </div>
+        <div class="field">
+          <div class="inline field">
+            <div class="ui toggle checkbox">
+              <input type="checkbox" tabindex="0" class="hidden">
+              <label>Реестр предприятий ЕАЭС</label>
+            </div>
+          </div>
+          <div class="inline field">
+            <div class="ui toggle checkbox">
+              <input type="checkbox" tabindex="0" class="hidden">
+              <label>Внутренний реестр предприятий</label>
+            </div>
+          </div>
+        </div>
         <input type="hidden" name="id" value = "<?php echo e($company->id); ?>">
         <button type = "submit" class = "ui button">Submit</button>
       </form>
@@ -48,6 +62,9 @@
       .transition('fade')
     ;
   })
+  ;
+  $('.ui.checkbox')
+  .checkbox()
   ;
 </script>
 <?php $__env->stopSection(); ?>

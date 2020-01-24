@@ -77,13 +77,29 @@
       <div class="center aligned row">
         <div class="column">
           <h3>"What a Company"</h3>
-          <p>That is what they all say about us</p>
+          <p>Предприятия вошедшие в реестр ЕАЭС</p>
+          <div class="ui statistic">
+            <div class="label">
+              Предприятий
+            </div>
+            <div class="value">
+              190
+            </div>
+          </div>
         </div>
         <div class="column">
           <h3>"I shouldn't have gone with their competitor."</h3>
           <p>
-            <img src="assets/images/avatar/nan.jpg" class="ui avatar image"> <b>Nan</b> Chief Fun Officer Acme Toys
+            Внутренний реестр предприятий
           </p>
+          <div class="ui statistic">
+            <div class="value">
+              5,550
+            </div>
+            <div class="label">
+              Предприятий
+            </div>
+          </div>
         </div>
       </div>
     </div>
