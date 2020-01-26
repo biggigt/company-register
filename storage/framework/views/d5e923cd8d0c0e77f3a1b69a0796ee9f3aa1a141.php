@@ -1,15 +1,5 @@
 <?php $__env->startSection('title','Companies list'); ?>
 <?php $__env->startSection('content'); ?>
-<?php if(session('info')): ?>
-  <div class="ui success message notification">
-    <i class="close icon"></i>
-    <div class="header">
-      <?php echo e(session('info')); ?>
-
-    </div>
-    <p>You may now log-in with the username you have chosen</p>
-  </div>
-<?php endif; ?>
   <div class="row">
     <div class="col-sm-12">
       <table class="ui celled table">

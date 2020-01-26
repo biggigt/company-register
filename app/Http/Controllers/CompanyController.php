@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Company;
 use App\business_type;
+use App\Http\Controllers\Input;
 
 class CompanyController extends Controller
 {
@@ -88,7 +89,12 @@ class CompanyController extends Controller
         $company->subject_acting = $request->input('subject_acting');
         $company->subject_owner = $request->input('subject_owner');
         $company->save(); //persist the data
-        return redirect()->route('companies.index')->with('info','Company Updated Successfully');
+        $registry = '';
+        if( $request->input('add_to_registry') ) {
+            // there is something for 'test'
+            $registry = ' Company added to registry';
+        }
+        return redirect()->route('companies.index')->with('info','Company Updated Successfully'.$registry);
     }
     /**
      * Remove the specified resource from storage.

@@ -8,8 +8,14 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="<?php echo e(asset('assets/semantic/semantic.min.js')); ?>"></script>
+  <style type="text/css">
+    .footer.segment {
+      padding: 5em 0em;
+    }
+  </style>
 </head>
 <body>
+
 	<div class="ui attached stackable menu">
 	  <div class="ui container">
 	  	<div class="item">
@@ -18,24 +24,24 @@
 	    <a class="item" href="/">
 	      <i class="home icon"></i> Главная
 	    </a>
-	    <div class="ui simple dropdown item">
-	      Предприятия
-	      <i class="dropdown icon"></i>
-	      <div class="menu">
-	        <a class="item" href="/companies"><i class="edit icon"></i> View</a>
-	        <a class="item" href="/create"><i class="globe icon"></i> Add</a>
-	      </div>
-	    </div>
 	    <a class="item">
-	      <i class="mail icon"></i> Реестры
+	      <i class="table icon"></i> Реестры
 	    </a>
 	    <div class="ui simple dropdown item">
-	      Справочники
+	      <i class="building icon"></i> Предприятия
 	      <i class="dropdown icon"></i>
 	      <div class="menu">
-	        <a class="item" href="/businesstypes"><i class="edit icon"></i> Business type</a>
-	        <a class="item"><i class="globe icon"></i> Choose Language</a>
-	        <a class="item"><i class="settings icon"></i> Account Settings</a>
+	        <a class="item" href="/companies"><i class="bars icon"></i> Просмотр</a>
+	        <a class="item" href="/create"><i class="plus square outline icon"></i> Добавить</a>
+	      </div>
+	    </div>
+	    <div class="ui simple dropdown item">
+	      <i class="clipboard outline icon"></i> Справочники
+	      <i class="dropdown icon"></i>
+	      <div class="menu">
+	        <a class="item" href="/businesstypes"><i class="edit icon"></i> ОПФ</a>
+	        <a class="item" href="/registrytypes"><i class="globe icon"></i> Реестры</a>
+	        <a class="item" href="/facility"><i class="settings icon"></i> Виды предприятий</a>
 	      </div>
 	    </div>
 	    
@@ -68,17 +74,53 @@
         <?php endif; ?>
 	  </div>
 	</div>
-<div class="ui container" style="padding-top: 20px;">
-  <?php echo $__env->yieldContent('content'); ?>
+
+<div class="ui container" style="padding-top: 20px;position: relative;min-height: 80%;">
+	<?php if(session('info')): ?>
+		<?php $__env->startComponent('notification'); ?>
+			<?php echo e(session('info')); ?>
+
+		<?php echo $__env->renderComponent(); ?>
+	<?php endif; ?>
+  	<?php echo $__env->yieldContent('content'); ?>
 </div>
+<div class="ui inverted vertical footer segment" style="padding: 5em 0em;">
+    <div class="ui container">
+      <div class="ui stackable inverted divided equal height stackable grid">
+        <div class="three wide column">
+          <h4 class="ui inverted header">About</h4>
+          <div class="ui inverted link list">
+            <a href="#" class="item">Sitemap</a>
+            <a href="#" class="item">Contact Us</a>
+            <a href="#" class="item">Religious Ceremonies</a>
+            <a href="#" class="item">Gazebo Plans</a>
+          </div>
+        </div>
+        <div class="three wide column">
+          <h4 class="ui inverted header">Services</h4>
+          <div class="ui inverted link list">
+            <a href="#" class="item">Banana Pre-Order</a>
+            <a href="#" class="item">DNA FAQ</a>
+            <a href="#" class="item">How To Access</a>
+            <a href="#" class="item">Favorite X-Men</a>
+          </div>
+        </div>
+        <div class="seven wide column">
+          <h4 class="ui inverted header">Footer Header</h4>
+          <p>Extra space for a call to action inside the footer that could help re-engage users.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
+
 <?php echo $__env->yieldContent('scripts'); ?>
 <script type="text/javascript">
   $('.ui.dropdown')
     .dropdown()
   ;
   $(document).ready(function(){
-  	$(".notification").delay(5000).slideUp(300);
+  	$(".notification").delay(4000).slideUp(300);
     });
 </script>
 </html><?php /**PATH /Users/k.dzhunushaliev/dev/company-register/resources/views/layouts/master.blade.php ENDPATH**/ ?>

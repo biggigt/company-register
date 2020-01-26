@@ -37,7 +37,7 @@
         <div class="field">
           <div class="inline field">
             <div class="ui toggle checkbox">
-              <input type="checkbox" tabindex="0" class="hidden">
+              <input id = "add_to_registry" name = "add_to_registry" type="checkbox" tabindex="0" class="hidden">
               <label>Реестр предприятий ЕАЭС</label>
             </div>
           </div>

@@ -28,6 +28,10 @@
           <input type="text" name = "regnumber" id = "regnumber" class="form-control" required>
         </div>
         <div class="field">
+          <label for="address">Full address:</label>
+          <input type="text" name = "address" id = "address" class="form-control" required>
+        </div>
+        <div class="field">
           <label for="facility_type">Type of facility:</label>
           <input type="text" name = "facility_type" id = "facility_type" class="form-control" required>
         </div>
