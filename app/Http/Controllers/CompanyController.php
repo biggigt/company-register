@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Company;
 use App\business_type;
-use App\Http\Controllers\Input;
+use App\Http\Controllers\RegistryController;
 
 class CompanyController extends Controller
 {
@@ -92,6 +92,7 @@ class CompanyController extends Controller
         $registry = '';
         if( $request->input('add_to_registry') ) {
             // there is something for 'test'
+            app(RegistryController::class)->add_to_registry($request->input('id'),2);
             $registry = ' Company added to registry';
         }
         return redirect()->route('companies.index')->with('info','Company Updated Successfully'.$registry);
