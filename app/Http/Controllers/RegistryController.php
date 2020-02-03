@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\RegistryType;
 use App\Registry;
 
@@ -45,11 +46,21 @@ class RegistryController extends Controller
     	return redirect()->route('registry.viewtypes');
     }
 
-   public function add_to_registry($id,$registryId){
+    public function add_to_registry($id,$registryId){
    		$registry = new registry();
    		$registry->registryTypeId = $registryId;
    		$registry->companyId = $id;
    		$registry->save();
    		return redirect()->route('companies.view',['id'=>$id])->with('info','Company added to registry successfully');
-   }
+    }
+
+    public function find_registry(){
+        $companies = DB::table('companies')
+                        ->join('registries','companies.id', '=','registries.companyId')
+                        ->select('companies.*','registries.registryTypeId')
+                        ->where('registries.registryTypeId','=',2)
+                        ->get();
+
+        return view('registry.index', ['companies' => $companies]);
+    }
 }

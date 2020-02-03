@@ -24,7 +24,7 @@
 	    <a class="item" href="/">
 	      <i class="home icon"></i> Главная
 	    </a>
-	    <a class="item">
+	    <a class="item" href="/registry/view">
 	      <i class="table icon"></i> Реестры
 	    </a>
 	    <div class="ui simple dropdown item">

@@ -48,3 +48,5 @@ Route::get('/facility/{id}/delete','FacilityController@destroy')->name('facility
 Route::get('/facility/create','FacilityController@create')->name('facility.create');
 Route::post('/facility/create','FacilityController@store')->name('facility.store');
 Route::post('/facility/update','FacilityController@update')->name('facility.update');
+
+Route::get('/registry/view', 'RegistryController@find_registry')->name('registry.index');
