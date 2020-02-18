@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Company;
 use App\business_type;
+use App\facility_type;
 use App\Http\Controllers\RegistryController;
 
 class CompanyController extends Controller
@@ -29,7 +30,8 @@ class CompanyController extends Controller
     {
         //Return view to create company
         $business_types= business_type::all(['id','code','business_type_name']);
-        return view('company.create',['business_types'=>$business_types]);
+        $facility_types = facility_type::all(['id','code','facility_type_name']);
+        return view('company.create',['business_types'=>$business_types,'facility_types'=>$facility_types]);
     }
     /**
      * Store a newly created resource in storage.
@@ -48,7 +50,7 @@ class CompanyController extends Controller
         $company->name = $request->input('name');
         $company->regnumber = $request->input('regnumber');
         $company->address = $request->input('address');
-        $company->facility_type = $request->input('facility_type');
+        $company->facility_type = $request->get('facility_type_dropdown');
         $company->subject_acting = $request->input('subject_acting');
         $company->subject_owner = $request->input('subject_owner');
         $company->save(); //persist the data
@@ -85,7 +87,7 @@ class CompanyController extends Controller
         $company->name = $request->input('name');
         $company->regnumber = $request->input('regnumber');
         $company->address = $request->input('address');
-        $company->facility_type = $request->input('facility_type');
+        $company->facility_type = $request->get('facility_type_dropdown');
         $company->subject_acting = $request->input('subject_acting');
         $company->subject_owner = $request->input('subject_owner');
         $company->save(); //persist the data

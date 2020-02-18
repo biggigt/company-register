@@ -33,8 +33,14 @@
           <input type="text" name = "address" id = "address" class="form-control" required>
         </div>
         <div class="field">
-          <label for="facility_type">Type of facility:</label>
-          <input type="text" name = "facility_type" id = "facility_type" class="form-control" required>
+          <label for="facility_type_dropdown">Type of facility:</label>
+          <select id="facility_type_dropdown" name="facility_type_dropdown" class="ui search dropdown" required>
+            <option value="">Выберите вид организации</option>
+            @foreach($facility_types as $facility_type)
+              <option value="{{ $facility_type->id }}">{{ $facility_type->facility_type_name }}</option>
+            @endforeach
+          </select>
+            <input type="text" name = "facility_type" id = "facility_type" class="form-control" required>
         </div>
         <div class="field">
           <label for="subject_acting">Subject acting:</label>
