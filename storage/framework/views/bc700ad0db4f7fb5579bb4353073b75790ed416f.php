@@ -32,8 +32,14 @@
           <input type="text" name = "address" id = "address" class="form-control" required>
         </div>
         <div class="field">
-          <label for="facility_type">Type of facility:</label>
-          <input type="text" name = "facility_type" id = "facility_type" class="form-control" required>
+          <label for="facility_type_dropdown">Type of facility:</label>
+          <select id="facility_type_dropdown" name="facility_type_dropdown" class="ui search dropdown" required>
+            <option value="">Выберите вид организации</option>
+            <?php $__currentLoopData = $facility_types; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $facility_type): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+              <option value="<?php echo e($facility_type->id); ?>"><?php echo e($facility_type->facility_type_name); ?></option>
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+          </select>
+            <input type="text" name = "facility_type" id = "facility_type" class="form-control" required>
         </div>
         <div class="field">
           <label for="subject_acting">Subject acting:</label>

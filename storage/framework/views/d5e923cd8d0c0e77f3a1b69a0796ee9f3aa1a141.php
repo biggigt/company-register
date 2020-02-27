@@ -1,5 +1,17 @@
 <?php $__env->startSection('title','Companies list'); ?>
 <?php $__env->startSection('content'); ?>
+<div class="ui container" >
+  <div class="ui menu" >
+    <a class="item">
+      About Us
+    </a>
+    <a class="item">
+      Jobs
+    </a>
+    <a class="item">
+      Locations
+    </a>
+  </div>
   <div class="row">
     <div class="col-sm-12">
       <table class="ui celled table">
@@ -31,5 +43,6 @@
       </table>
     </div>
   </div>
+</div>
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('layouts.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /Users/k.dzhunushaliev/dev/company-register/resources/views/company/index.blade.php ENDPATH**/ ?>

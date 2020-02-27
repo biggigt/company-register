@@ -15,101 +15,107 @@
   </style>
 </head>
 <body>
+<div class="pusher"><div class="full height">
+<div class="toc" style="width:200px;position: fixed;height: 100%;"><div class="ui vertical inverted menu" style="width: 200px;height: 100%;background: #005d9c;">
+<a class="item" href="/introduction/getting-started.html">
+  <b>Реестр предприятий</b>
+</a>
+<a class="item" href="/introduction/new.html">
+  <b>1.0.1</b>
+</a>
+<div class="item">
+  <div class="header">Реестры</div>
+  <div class="menu">
+    
+      <a class="item" href="/introduction/integrations.html">
+        ЕАЭС
+      </a>
+    
+      <a class="item" href="/introduction/build-tools.html">
+        Внутренний реестр
+      </a>
+    
+      <a class="item" href="/introduction/advanced-usage.html">
+        1а
+      </a>
+    
+      <a class="item" href="/introduction/glossary.html">
+        1б
+      </a>
+    
+  </div>
+</div>
+<div class="item">
+  <div class="header">Предприятия</div>
+  <div class="menu">
+    
+      <a class="item" href="/companies">
+        Просмотр
+      </a>
+    
+      <a class="item" href="/create">
+        Добавить
+      </a>
+    
+  </div>
+</div>
+<div class="item">
+  <div class=" header">Справочники</div>
+  <div class="menu">
+      <a class="item" href="/businesstypes">ОПФ</a>
+      <a class="item" href="/registrytypes">Реестры</a>
+      <a class="item" href="/facility">Виды предприятий</a>
+  </div>
+</div>
 
-	<div class="ui attached stackable menu">
-	  <div class="ui container">
-	  	<div class="item">
-			<img src="/assets/images/logo1.jpg">
-		</div>
-	    <a class="item" href="/">
-	      <i class="home icon"></i> Главная
-	    </a>
-	    <a class="item" href="/registry/view">
-	      <i class="table icon"></i> Реестры
-	    </a>
-	    <div class="ui simple dropdown item">
-	      <i class="building icon"></i> Предприятия
-	      <i class="dropdown icon"></i>
-	      <div class="menu">
-	        <a class="item" href="/companies"><i class="bars icon"></i> Просмотр</a>
-	        <a class="item" href="/create"><i class="plus square outline icon"></i> Добавить</a>
-	      </div>
-	    </div>
-	    <div class="ui simple dropdown item">
-	      <i class="clipboard outline icon"></i> Справочники
-	      <i class="dropdown icon"></i>
-	      <div class="menu">
-	        <a class="item" href="/businesstypes"><i class="edit icon"></i> ОПФ</a>
-	        <a class="item" href="/registrytypes"><i class="globe icon"></i> Реестры</a>
-	        <a class="item" href="/facility"><i class="settings icon"></i> Виды предприятий</a>
-	      </div>
-	    </div>
-	    
-	    @guest
-            <div class="right item"><a class="ui button" href="{{ route('login') }}">{{ __('Login') }}</a></div>
-            @if (Route::has('register'))
-                <div class="item"><a class="ui primary button" href="{{ route('register') }}">{{ __('Register') }}</a></div>
-            @endif
-        @else
-            <div class="right item">
-            	<div class="ui dropdown">
-        			<div class="text">{{ Auth::user()->name }}</div>
-					<i class="dropdown icon"></i>
-					<div class="menu">
-		                <div class="item">
-		                    <a class="ui basic" href="{{ route('logout') }}"
-		                       onclick="event.preventDefault();
-		                                     document.getElementById('logout-form').submit();">
-		                        <i class="sign out alternate icon"></i>{{ __('Logout') }}
-		                    </a>
+</div>
+</div>
 
-		                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-		                        @csrf
-		                    </form>
-		                </div>
-	            	</div>	
-	            </div>
-            </div>
-        @endguest
-	  </div>
-	</div>
-
-<div class="ui container" style="padding-top: 20px;position: relative;min-height: 80%;">
+	  
+	
+<div class="article" style="margin-left: 200px;padding-top: 50px;">
+<!-- <div class="ui container" style="padding-top: 20px;position: relative;min-height: 80%;"> -->
 	@if (session('info'))
 		@component('notification')
 			{{ session('info') }}
 		@endcomponent
 	@endif
   	@yield('content')
-</div>
-<div class="ui inverted vertical footer segment" style="padding: 5em 0em;">
-    <div class="ui container">
-      <div class="ui stackable inverted divided equal height stackable grid">
-        <div class="three wide column">
-          <h4 class="ui inverted header">About</h4>
-          <div class="ui inverted link list">
-            <a href="#" class="item">Sitemap</a>
-            <a href="#" class="item">Contact Us</a>
-            <a href="#" class="item">Religious Ceremonies</a>
-            <a href="#" class="item">Gazebo Plans</a>
-          </div>
+<!-- </div> -->
+<div class="ui  vertical footer segment" style="border-top: 1pxborder-top: 1px solid #DDDDDD;
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.08) inset;
+    background-color: #FAFAFA;
+    padding-top: 2em; solid #DDDDDD;
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.08) inset;
+    background-color: #FAFAFA;
+    padding-top: 2em;position: fixed;bottom: 0px;padding: 1em;width: 100%;">
+  <div class="ui center aligned container">
+    <div class="ui stackable grid">
+      <div class="three wide column">
+        <h4 class="ui header">РЕЕСТРЫ ПРЕДПРИЯТИЙ</h4>
+        <div class="ui link list">
+          <a class="item" href="https://www.transifex.com/organization/semantic-org/" target="_blank">Подать заявку</a>
+          <a class="item" href="https://github.com/Semantic-Org/Semantic-UI/issues" target="_blank">Узнать больше о реестре</a>
         </div>
-        <div class="three wide column">
-          <h4 class="ui inverted header">Services</h4>
-          <div class="ui inverted link list">
-            <a href="#" class="item">Banana Pre-Order</a>
-            <a href="#" class="item">DNA FAQ</a>
-            <a href="#" class="item">How To Access</a>
-            <a href="#" class="item">Favorite X-Men</a>
-          </div>
+      </div>
+      <div class="three wide column">
+        <h4 class="ui header">ГИВФБ при ПКР</h4>
+        <div class="ui link list">
+          <a class="item" href="https://github.com/Semantic-Org/Semantic-UI" target="_blank">Веб-сайт</a>
+          <a class="item" href="http://forums.semantic-ui.com" target="_blank">Контакты</a>
         </div>
-        <div class="seven wide column">
-          <h4 class="ui inverted header">Footer Header</h4>
-          <p>Extra space for a call to action inside the footer that could help re-engage users.</p>
-        </div>
+      </div>
+      <div class="seven wide right floated column">
+        <h4 class="ui header">АИС "Реестр предприятий"</h4>
+        <p>© 2020 «ГИВФБ при ПКР»</p>
       </div>
     </div>
   </div>
+</div>
+</div>
+
+</div>
+</div>
 </body>
 
 @yield('scripts')
@@ -117,6 +123,12 @@
   $('.ui.dropdown')
     .dropdown()
   ;
+  function myFunction() {
+  	$('.ui.sidebar')
+	  .sidebar('toggle')
+	;
+  };
+  
   $(document).ready(function(){
   	$(".notification").delay(4000).slideUp(300);
     });
