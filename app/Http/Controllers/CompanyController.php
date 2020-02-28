@@ -87,7 +87,7 @@ class CompanyController extends Controller
         $company->name = $request->input('name');
         $company->regnumber = $request->input('regnumber');
         $company->address = $request->input('address');
-        $company->facility_type = $request->get('facility_type_dropdown');
+        $company->facility_type = $request->input('facility_type');
         $company->subject_acting = $request->input('subject_acting');
         $company->subject_owner = $request->input('subject_owner');
         $company->save(); //persist the data
