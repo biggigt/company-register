@@ -16,7 +16,7 @@
 </head>
 <body>
 <div class="pusher"><div class="full height">
-<div class="toc" style="width:200px;position: fixed;height: 100%;"><div class="ui vertical inverted menu" style="width: 200px;height: 100%;background: #005d9c;">
+<div class="toc" style="width:200px;position: fixed;height: 100%;"><div class="ui vertical inverted menu" style="width: 200px;height: 100%;background: #005d9c;border-radius: 0px;">
 <a class="item" href="/introduction/getting-started.html">
   <b>Реестр предприятий</b>
 </a>
@@ -26,23 +26,13 @@
 <div class="item">
   <div class="header">Реестры</div>
   <div class="menu">
-    
-      <a class="item" href="/introduction/integrations.html">
-        ЕАЭС
-      </a>
-    
-      <a class="item" href="/introduction/build-tools.html">
-        Внутренний реестр
-      </a>
-    
-      <a class="item" href="/introduction/advanced-usage.html">
-        1а
-      </a>
-    
-      <a class="item" href="/introduction/glossary.html">
-        1б
-      </a>
-    
+	<a class="item" href="/registry/view">Последние добавленные</a>
+  	<a class="item" href="/introduction/integrations.html">
+    ЕАЭС</a>
+  	<a class="item" href="/introduction/build-tools.html">
+    Внутренний реестр</a>
+  	<a class="item" href="/introduction/advanced-usage.html">
+    1а</a>
   </div>
 </div>
 <div class="item">
@@ -60,6 +50,20 @@
   </div>
 </div>
 <div class="item">
+  <div class="header">Cубъекты</div>
+  <div class="menu">
+    
+      <a class="item" href="/subjects">
+        Просмотр
+      </a>
+    
+      <a class="item" href="/subject/create">
+        Добавить
+      </a>
+    
+  </div>
+</div>
+<div class="item">
   <div class=" header">Справочники</div>
   <div class="menu">
       <a class="item" href="/businesstypes">ОПФ</a>
@@ -67,12 +71,29 @@
       <a class="item" href="/facility">Виды предприятий</a>
   </div>
 </div>
+<div class="item">
+	<div class="ui accordion inverted">
+	  <div class="title">
+	    Поиск и фильтры
+	    <i class="dropdown icon"></i>
+	  </div>
+	  <div class="content">
+	    <p class="transition hidden">A dog is a type of domesticated animal. Known for its loyalty and faithfulness, it can be found as a welcome guest in many households across the world.</p>
+	  </div>
+	</div>
+</div>
+<div class="item" style="position: fixed;bottom: 0px;">
+	<div class=" header"></div>
+	  <div class="menu" style="padding: 1em;">
+	  	<p>АИС "Реестр предприятий"</p>
+		<p>© 2020 «ГИВФБ при ПКР»</p>
+	  </div>
+	</div>
+</div>
 
 </div>
 </div>
 
-	  
-	
 <div class="article" style="margin-left: 200px;padding-top: 50px;">
 <!-- <div class="ui container" style="padding-top: 20px;position: relative;min-height: 80%;"> -->
 	<?php if(session('info')): ?>
@@ -83,7 +104,7 @@
 	<?php endif; ?>
   	<?php echo $__env->yieldContent('content'); ?>
 <!-- </div> -->
-<div class="ui  vertical footer segment" style="border-top: 1pxborder-top: 1px solid #DDDDDD;
+<!-- <div class="ui  vertical footer segment" style="border-top: 1pxborder-top: 1px solid #DDDDDD;
     box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.08) inset;
     background-color: #FAFAFA;
     padding-top: 2em; solid #DDDDDD;
@@ -112,7 +133,7 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
 </div>
 
 </div>
@@ -129,6 +150,13 @@
 	  .sidebar('toggle')
 	;
   };
+  $('.accordion')
+  .accordion({
+    selector: {
+      trigger: ' .title '
+    }
+  })
+;
   
   $(document).ready(function(){
   	$(".notification").delay(4000).slideUp(300);

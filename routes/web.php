@@ -50,3 +50,12 @@ Route::post('/facility/create','FacilityController@store')->name('facility.store
 Route::post('/facility/update','FacilityController@update')->name('facility.update');
 
 Route::get('/registry/view', 'RegistryController@find_registry')->name('registry.index');
+
+Route::get('/subjects', 'SubjectController@index')->name('subject.index');
+Route::get('/subject/{id}/edit','SubjectController@edit')->name('subject.edit');
+Route::get('/subject/{id}/view','SubjectController@view')->name('subject.view');
+Route::get('/subject/{id}/delete','SubjectController@destroy')->name('subject.destroy');
+Route::get('/subject/create','SubjectController@create')->name('subject.create');
+Route::post('/subject/create','SubjectController@store')->name('subject.store');
+Route::post('/subject/update','SubjectController@update')->name('subject.update');
+

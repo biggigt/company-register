@@ -53,11 +53,11 @@
   <div class="header">Cубъекты</div>
   <div class="menu">
     
-      <a class="item" href="/companies">
+      <a class="item" href="/subjects">
         Просмотр
       </a>
     
-      <a class="item" href="/create">
+      <a class="item" href="/subject/create">
         Добавить
       </a>
     
