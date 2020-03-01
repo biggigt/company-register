@@ -16,7 +16,7 @@
 </head>
 <body>
 <div class="pusher"><div class="full height">
-<div class="toc" style="width:200px;position: fixed;height: 100%;"><div class="ui vertical inverted menu" style="width: 200px;height: 100%;background: #005d9c;border-radius: 0px;">
+<div class="toc" style="width:250px;position: fixed;height: 100%;"><div class="ui vertical inverted menu" style="width: 250px;height: 100%;background: #005d9c;border-radius: 0px;overflow: auto;">
 <a class="item" href="/introduction/getting-started.html">
   <b>Реестр предприятий</b>
 </a>
@@ -78,11 +78,43 @@
 	    <i class="dropdown icon"></i>
 	  </div>
 	  <div class="content">
+	  	<label for="s_regnumber">Номер в реестре</label>
+	  	<div class="ui fluid input small">
+		  <input name="s_regnumber" id="s_regnumber" type="text" placeholder="Номер..." class="form-control">
+		</div>
+		<div class="ui divider"></div>
+	  	<label for="s_name">Название предприятия</label>
+	  	<div class="ui fluid input small">
+		  <input name="s_name" id="s_name" type="text" placeholder="Название..." class="form-control">
+		</div>
+		<div class="ui divider"></div>
+	  	<label for="dd">Вид объекта</label>
+	  	<select id = "dd" name="dd" class="ui fluid search dropdown small">
+		  <option value="">Выберите</option>
+		  <option value="ML">Молокоперерабатывающие предприятия</option>
+		  <option value="MT">Мясоперерабатывающие предприятия</option>
+		  <option value="HO">Охотхозяйства</option>
+		  <option value="Bee">Пасеки</option>
+		</select>
+		<div class="ui divider"></div>
+		<label for="s_name">ИНН субъекта</label>
+	  	<div class="ui fluid input small">
+		  <input name="s_name" id="s_name" type="text" placeholder="Название..." class="form-control">
+		</div>
+		<div class="ui divider"></div>
+	  	<label for="dd">Статус</label>
+	  	<select id = "dd" name="dd" class="ui fluid search dropdown small">
+		  <option value="">Выберите</option>
+		  <option value="ML">Разрешено</option>
+		  <option value="MT">Временный заперт</option>
+		  <option value="HO">Усиленный контроль</option>
+		</select>
+
 	    <p class="transition hidden">A dog is a type of domesticated animal. Known for its loyalty and faithfulness, it can be found as a welcome guest in many households across the world.</p>
 	  </div>
 	</div>
 </div>
-<div class="item" style="position: fixed;bottom: 0px;">
+<div class="item" style="position: relative;bottom: 0px;">
 	<div class=" header"></div>
 	  <div class="menu" style="padding: 1em;">
 	  	<p>АИС "Реестр предприятий"</p>
@@ -94,7 +126,7 @@
 </div>
 </div>
 
-<div class="article" style="margin-left: 200px;padding-top: 50px;">
+<div class="article" style="margin-left: 250px;padding-top: 50px;">
 <!-- <div class="ui container" style="padding-top: 20px;position: relative;min-height: 80%;"> -->
 	<?php if(session('info')): ?>
 		<?php $__env->startComponent('notification'); ?>
