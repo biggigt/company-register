@@ -40,7 +40,6 @@
               <option value="{{ $facility_type->id }}">{{ $facility_type->facility_type_name }}</option>
             @endforeach
           </select>
-            <input type="text" name = "facility_type" id = "facility_type" class="form-control" required>
         </div>
         <div class="field">
           <label for="subject_acting">Subject acting:</label>
