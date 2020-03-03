@@ -1,4 +1,4 @@
-<?php $__env->startSection('title','Create Company'); ?>
+<?php $__env->startSection('title','Регистрация предприятия в реестре'); ?>
 <?php $__env->startSection('content'); ?>
   <div class="ui container">
     <div class="ui text container">
@@ -11,7 +11,7 @@
       <form class="ui form" action="<?php echo e(route('companies.store')); ?>" method = "post">
         <?php echo csrf_field(); ?>
         <div class="field">
-          <label for="business_type_dropdown">Business type:</label>
+          <label for="business_type_dropdown">Организационно-правовая форма:</label>
           <select id="business_type_dropdown" name="business_type_dropdown" class="ui search dropdown">
             <option value="">Выберите ОПФ</option>
             <?php $__currentLoopData = $business_types; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $business_type): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
@@ -20,36 +20,45 @@
           </select>
         </div>
         <div class="field">
-          <label for="name">Name:</label>
-          <input type="text" name = "name" id = "name" class="form-control" required>
+          <label for="name">Название предприятия:</label>
+          <input type="text" name = "name" id = "name" class="form-control" placeholder="Введите название предприятия" required>
         </div>
         <div class="field">
-          <label for="regnumber">Registration #:</label>
-          <input type="text" name = "regnumber" id = "regnumber" class="form-control" required>
+          <label for="regnumber">Регистрационный номер:</label>
+          <input type="text" name = "regnumber" id = "regnumber" class="form-control" placeholder="Введите присвоенный регистрационный номер" required>
         </div>
         <div class="field">
-          <label for="address">Full address:</label>
-          <input type="text" name = "address" id = "address" class="form-control" required>
+          <label for="address">Полный адрес:</label>
+          <input type="text" name = "address" id = "address" class="form-control" placeholder="Введите полный адрес" required>
         </div>
         <div class="field">
-          <label for="facility_type_dropdown">Type of facility:</label>
+          <label for="facility_type_dropdown">Вид предприятия:</label>
           <select id="facility_type_dropdown" name="facility_type_dropdown" class="ui search dropdown" required>
-            <option value="">Выберите вид организации</option>
+            <option value="">Выберите вид предприятия</option>
             <?php $__currentLoopData = $facility_types; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $facility_type): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
               <option value="<?php echo e($facility_type->id); ?>"><?php echo e($facility_type->facility_type_name); ?></option>
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
           </select>
-            <input type="text" name = "facility_type" id = "facility_type" class="form-control" required>
         </div>
         <div class="field">
-          <label for="subject_acting">Subject acting:</label>
-          <input type="text" name = "subject_acting" id = "subject_acting" class="form-control" required>
+          <label for="subject_acting_dropdown">Субъект, осуществляющий деятельность:</label>
+          <select name = "subject_acting_dropdown" id = "subject_acting_dropdown" class="ui search dropdown" required>
+            <option value="">Выберите субъекта</option>
+            <?php $__currentLoopData = $subjects; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $subject): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+              <option value="<?php echo e($subject->id); ?>"><?php echo e($subject->subject_type); ?> "<?php echo e($subject->name); ?>"</option>
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+          </select>
         </div>
         <div class="field">
-          <label for="subject_owner">Subject owner:</label>
-          <input type="text" name = "subject_owner" id = "subject_owner" class="form-control" required>
+          <label for="subject_owner_dropdown">Субъект - владелец:</label>
+          <select name = "subject_owner_dropdown" id = "subject_owner_dropdown" class="ui search dropdown" required>
+            <option value="">Выберите субъекта</option>
+            <?php $__currentLoopData = $subjects; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $subject): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+              <option value="<?php echo e($subject->id); ?>"><?php echo e($subject->subject_type); ?> "<?php echo e($subject->name); ?>"</option>
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+          </select>
         </div>
-        <button type = "submit" class = "ui button">Submit</button>
+        <button type = "submit" class = "ui button">Соханить</button>
       </form>
     </div>
   </div>

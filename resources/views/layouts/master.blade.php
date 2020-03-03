@@ -64,6 +64,20 @@
   </div>
 </div>
 <div class="item">
+  <div class="header">Присвоение/обновление статуса</div>
+  <div class="menu">
+    
+      <a class="item" href="/subjects">
+        Добавить в реестр
+      </a>
+    
+      <a class="item" href="/subject/create">
+        Просмотреть/обновить статусы
+      </a>
+    
+  </div>
+</div>
+<div class="item">
   <div class=" header">Справочники</div>
   <div class="menu">
       <a class="item" href="/businesstypes">ОПФ</a>
@@ -126,7 +140,8 @@
 </div>
 </div>
 
-<div class="article" style="margin-left: 250px;padding-top: 50px;">
+<div class="article" style="margin-left: 250px;padding-top: 10px;">
+	<div class="ui horizontal divider">@yield('title')</div>
 <!-- <div class="ui container" style="padding-top: 20px;position: relative;min-height: 80%;"> -->
 	@if (session('info'))
 		@component('notification')

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Company;
 use App\business_type;
 use App\facility_type;
+use App\Subject;
 use App\Http\Controllers\RegistryController;
 
 class CompanyController extends Controller
@@ -31,7 +32,8 @@ class CompanyController extends Controller
         //Return view to create company
         $business_types= business_type::all(['id','code','business_type_name']);
         $facility_types = facility_type::all(['id','code','facility_type_name']);
-        return view('company.create',['business_types'=>$business_types,'facility_types'=>$facility_types]);
+        $subjects = Subject::all(['id','subject_type','name']);
+        return view('company.create',['business_types'=>$business_types,'facility_types'=>$facility_types,'subjects'=>$subjects]);
     }
     /**
      * Store a newly created resource in storage.
@@ -95,7 +97,7 @@ class CompanyController extends Controller
         if( $request->input('add_to_registry') ) {
             // there is something for 'test'
             app(RegistryController::class)->add_to_registry($request->input('id'),2);
-            $registry = ' Company added to registry';
+            $registry = 'Company added to registry';
         }
         return redirect()->route('companies.index')->with('info','Company Updated Successfully'.$registry);
     }
