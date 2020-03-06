@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\status;
 
 class StatusController extends Controller
 {
@@ -17,29 +18,29 @@ class StatusController extends Controller
     }
 
     public function store(Request $request){
-    	$registryType = new registryType();
-    	$registryType->registryType = $request->input('registry_type_name');
-    	$registryType->registryDescription = $request->input('registry_type_description');
-    	$registryType->save();
-    	return redirect()->route('registry.viewtypes')->with('info','Registry type added successfully');
+    	$status = new status();
+    	$status->code = $request->input('status_code');
+    	$status->status = $request->input('status_name');
+    	$status->save();
+    	return redirect()->route('status.index')->with('info','Статус предприятий добавлен успешно.');
     }
 
     public function edit($id){
-    	$registryType = registryType::find($id);
-    	return view('registry.edit',['registryType'=>$registryType]);
+    	$status = status::find($id);
+    	return view('status.edit',['status'=>$status]);
     }
 
     public function update(Request $request){
-    	$registryType = registryType::find($request->input('id'));
-    	$registryType->registryType = $request->input('registry_type_name');
-    	$registryType->registryDescription = $request->input('registry_type_description');
-    	$registryType->save();
-    	return redirect()->route('registry.viewtypes')->with('info','Registry type updated successfully');
+    	$status = status::find($request->input('id'));
+    	$status->code = $request->input('status_code');
+    	$status->status = $request->input('status_name');
+    	$status->save();
+    	return redirect()->route('status.index')->with('info','Статус предприятий обновлен успешно.');
     }
 
     public function destroy($id){
-    	$registryType = registryType::find($id);
-    	$registryType->delete();
-    	return redirect()->route('registry.viewtypes');
+    	$status = status::find($id);
+    	$status->delete();
+    	return redirect()->route('status.index');
     }
 }

@@ -59,3 +59,10 @@ Route::get('/subject/create','SubjectController@create')->name('subject.create')
 Route::post('/subject/create','SubjectController@store')->name('subject.store');
 Route::post('/subject/update','SubjectController@update')->name('subject.update');
 
+Route::get('/status', 'StatusController@index')->name('status.index');
+Route::get('/status/{id}/edit','StatusController@edit')->name('status.edit');
+Route::get('/status/{id}/view','StatusController@view')->name('status.view');
+Route::get('/status/{id}/delete','StatusController@destroy')->name('status.destroy');
+Route::get('/status/create','StatusController@create')->name('status.create');
+Route::post('/status/create','StatusController@store')->name('status.store');
+Route::post('/status/update','StatusController@update')->name('status.update');
