@@ -61,8 +61,14 @@ Route::post('/subject/update','SubjectController@update')->name('subject.update'
 
 Route::get('/status', 'StatusController@index')->name('status.index');
 Route::get('/status/{id}/edit','StatusController@edit')->name('status.edit');
-Route::get('/status/{id}/view','StatusController@view')->name('status.view');
 Route::get('/status/{id}/delete','StatusController@destroy')->name('status.destroy');
 Route::get('/status/create','StatusController@create')->name('status.create');
 Route::post('/status/create','StatusController@store')->name('status.store');
 Route::post('/status/update','StatusController@update')->name('status.update');
+
+Route::get('/activity', 'ActivityController@index')->name('activity.index');
+Route::get('/activity/{id}/edit','ActivityController@edit')->name('activity.edit');
+Route::get('/activity/{id}/delete','ActivityController@destroy')->name('activity.destroy');
+Route::get('/activity/create','ActivityController@create')->name('activity.create');
+Route::post('/activity/create','ActivityController@store')->name('activity.store');
+Route::post('/activity/update','ActivityController@update')->name('activity.update');

@@ -18,10 +18,10 @@
 <div class="pusher"><div class="full height">
 <div class="toc" style="width:250px;position: fixed;height: 100%;"><div class="ui vertical inverted menu" style="width: 250px;height: 100%;background: #005d9c;border-radius: 0px;overflow: auto;">
 <a class="item" href="/introduction/getting-started.html">
-  <b>Реестр предприятий</b>
+  <b>Реестр предприятий<br>ГИВФБ ПКР</b>
 </a>
 <a class="item" href="/introduction/new.html">
-  <b>1.0.1</b>
+  <b>0.5.10</b>
 </a>
 <div class="item">
   <div class="header">Реестры</div>
@@ -84,6 +84,7 @@
       <a class="item" href="/registrytypes">Реестры</a>
       <a class="item" href="/facility">Виды предприятий</a>
       <a class="item" href="/status">Статусы предприятий</a>
+      <a class="item" href="/activity">Виды деятельности</a>
   </div>
 </div>
 <div class="item">

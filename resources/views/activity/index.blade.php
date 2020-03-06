@@ -3,10 +3,10 @@
 @section('content')
   <div class="ui container">
     <div class="ui menu" >
-      <a class="item" href="/status">
+      <a class="item" href="/activity">
         Просмотреть
       </a>
-      <a class="item" href="/status/create">
+      <a class="item" href="/activity/create">
         Добавить
       </a>
     </div>
@@ -15,18 +15,17 @@
         <tr>
           <th>ID</th>
           <th>Код</th>
-          <th>Название статуса</th>
+          <th>Название вида деятельности</th>
           <th>Options</th>
         </tr>
       </thead>
-      @foreach($statuses as $status)
+      @foreach($activities as $activity)
         <tr class = "text-center">
-          <td>{{ $status->id }}</td>
-          <td>{{ $status->code }}</td>
-          <td>{{ $status->status }}</td>
-          <td><a href="{{route('status.view',['id'=>$status->id])}}" class = "btn btn-info"><i class="folder open outline icon"></i></a>
-            <a href="{{route('status.edit',['id'=>$status->id])}}" class = "btn btn-info"><i class="edit outline icon"></i></a>
-            <a href="{{route('status.destroy',['id'=>$status->id])}}" class = "btn btn-danger"><i class="trash alternate outline icon"></i></a>
+          <td>{{ $activity->id }}</td>
+          <td>{{ $activity->code }}</td>
+          <td>{{ $activity->activity_type_name }}</td>
+          <td><a href="{{route('activity.edit',['id'=>$activity->id])}}" class = "btn btn-info"><i class="edit outline icon"></i></a>
+            <a href="{{route('activity.destroy',['id'=>$activity->id])}}" class = "btn btn-danger"><i class="trash alternate outline icon"></i></a>
           </td>
         </tr>
       @endforeach
