@@ -53,8 +53,8 @@ class CompanyController extends Controller
         $company->regnumber = $request->input('regnumber');
         $company->address = $request->input('address');
         $company->facility_type = $request->get('facility_type_dropdown');
-        $company->subject_acting = $request->input('subject_acting');
-        $company->subject_owner = $request->input('subject_owner');
+        $company->subject_acting = $request->get('subject_acting_dropdown');
+        $company->subject_owner = $request->get('subject_owner_dropdown');
         $company->save(); //persist the data
         return redirect()->route('companies.index')->with('info','Company Added Successfully');
     }

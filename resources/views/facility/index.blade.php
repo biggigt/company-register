@@ -27,7 +27,7 @@
 					<td>{{ $facility_type->facility_type_name }}</td>
 					<td>
 						<a href="{{route('facility.edit',['id'=>$facility_type->id])}}" class = "btn btn-info"><i class="edit outline icon"></i></a>
-        				<a href="{{route('facility.destroy',['id'=>$facility_type->id])}}" class = "btn btn-danger"><i class="trash alternate outline icon"></i></a>
+        				<a href="{{route('facility.destroy',['id'=>$facility_type->id])}}" onclick="return confirm('Вы уверены что хотите удалить запись?');" class = "btn btn-danger"><i class="trash alternate outline icon"></i></a>
 					</td>
 				</tr>
 			@endforeach

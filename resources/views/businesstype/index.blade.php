@@ -27,7 +27,7 @@
 					<td>{{ $business_type->business_type_name }}</td>
 					<td>
 						<a href="{{route('businesstype.edit',['id'=>$business_type->id])}}" class = "btn btn-info"><i class="edit outline icon"></i></a>
-        				<a href="{{route('businesstype.destroy',['id'=>$business_type->id])}}" class = "btn btn-danger"><i class="trash alternate outline icon"></i></a>
+        				<a href="{{route('businesstype.destroy',['id'=>$business_type->id])}}" onclick="return confirm('Вы уверены что хотите удалить запись?');" class = "btn btn-danger"><i class="trash alternate outline icon"></i></a>
 					</td>
 				</tr>
 			@endforeach
