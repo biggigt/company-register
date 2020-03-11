@@ -187,6 +187,23 @@
 
 </div>
 </div>
+<div class="ui mini modal confirm transition hidden">
+	<div class="header">
+	  Удаление записи
+	</div>
+	<div class="content">
+	  <p>Вы уверены что хотите удалить запись</p>
+	</div>
+	<div class="actions">
+	  <div id="no" class="ui negative button">
+	    Нет
+	  </div>
+	  <div id="yes" class="ui positive right labeled icon button">
+	    Да
+	    <i class="checkmark icon"></i>
+	  </div>
+	</div>
+</div>
 </body>
 
 <?php echo $__env->yieldContent('scripts'); ?>
@@ -194,6 +211,22 @@
   $('.ui.dropdown')
     .dropdown()
   ;
+  function getConfirm(anchor){
+  	$('.ui.modal.confirm')
+	  .modal('show')
+	;
+	$('#yes').on('click', function(){
+        window.location.href = anchor.href;
+    });
+
+    $('#no').on('click', function(){
+        // close fancybox
+        //return false;
+    });
+
+    return false;
+
+  };
   function myFunction() {
   	$('.ui.sidebar')
 	  .sidebar('toggle')
