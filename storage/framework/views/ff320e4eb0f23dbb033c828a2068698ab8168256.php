@@ -1,4 +1,4 @@
-<?php $__env->startSection('title','Companies list'); ?>
+<?php $__env->startSection('title','Виды общественно-правовых форм'); ?>
 <?php $__env->startSection('content'); ?>
 	<div class="ui container">
 		<div class="ui menu" >
@@ -26,7 +26,7 @@
 					<td><?php echo e($business_type->business_type_name); ?></td>
 					<td>
 						<a href="<?php echo e(route('businesstype.edit',['id'=>$business_type->id])); ?>" class = "btn btn-info"><i class="edit outline icon"></i></a>
-        				<a href="<?php echo e(route('businesstype.destroy',['id'=>$business_type->id])); ?>" class = "btn btn-danger"><i class="trash alternate outline icon"></i></a>
+        				<a href="<?php echo e(route('businesstype.destroy',['id'=>$business_type->id])); ?>" onclick="return getConfirm(this);" class = "btn btn-danger"><i class="trash alternate outline icon"></i></a>
 					</td>
 				</tr>
 			<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

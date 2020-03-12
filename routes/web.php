@@ -72,3 +72,10 @@ Route::get('/activity/{id}/delete','ActivityController@destroy')->name('activity
 Route::get('/activity/create','ActivityController@create')->name('activity.create');
 Route::post('/activity/create','ActivityController@store')->name('activity.store');
 Route::post('/activity/update','ActivityController@update')->name('activity.update');
+
+Route::get('/harmonizedsc', 'HarmonizedscController@index')->name('harmonizedsc.index');
+Route::get('/harmonizedsc/{id}/edit','HarmonizedscController@edit')->name('harmonizedsc.edit');
+Route::get('/harmonizedsc/{id}/delete','HarmonizedscController@destroy')->name('harmonizedsc.destroy');
+Route::get('/harmonizedsc/create','HarmonizedscController@create')->name('harmonizedsc.create');
+Route::post('/harmonizedsc/create','HarmonizedscController@store')->name('harmonizedsc.store');
+Route::post('/harmonizedsc/update','HarmonizedscController@update')->name('harmonizedsc.update');
