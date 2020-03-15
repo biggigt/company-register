@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRegistriesTable extends Migration
+class CreateCompanyInRegistryStatusesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,13 @@ class CreateRegistriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('registries', function (Blueprint $table) {
+        Schema::create('company_in_registry_statuses', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('registryTypeId');
-            $table->integer('companyId');
+            $table->bigInteger('registries_id');
+            $table->integer('statuses_id');
+            $table->integer('countries_id');
+            $table->string('act');
+            $table->enum('state', ['active', 'deactivated']);
             $table->date('c_date');
             $table->timestamps();
         });
@@ -29,6 +32,6 @@ class CreateRegistriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('registries');
+        Schema::dropIfExists('company_in_registry_statuses');
     }
 }

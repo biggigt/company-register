@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRegistriesTable extends Migration
+class CreateCompanyInRegistryHarmonizedCodesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateRegistriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('registries', function (Blueprint $table) {
+        Schema::create('company_in_registry_harmonized_codes', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('registryTypeId');
-            $table->integer('companyId');
-            $table->date('c_date');
+            $table->bigInteger('registries_id');
+            $table->bigInteger('harmonizedcs_id');
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ class CreateRegistriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('registries');
+        Schema::dropIfExists('company_in_registry_harmonized_codes');
     }
 }

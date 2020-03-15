@@ -85,6 +85,7 @@
       <a class="item" href="/facility">Виды предприятий</a>
       <a class="item" href="/status">Статусы предприятий</a>
       <a class="item" href="/activity">Виды деятельности</a>
+      <a class="item" href="/harmonizedsc">Коды ТН ВЭД</a>
   </div>
 </div>
 <div class="item">

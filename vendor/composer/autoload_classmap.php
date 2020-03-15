@@ -7,6 +7,8 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'App\\Company' => $baseDir . '/app/Company.php',
+    'App\\CompanyInRegistryHarmonizedCode' => $baseDir . '/app/CompanyInRegistryHarmonizedCode.php',
+    'App\\CompanyInRegistryStatus' => $baseDir . '/app/CompanyInRegistryStatus.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
     'App\\HarmonizedSC' => $baseDir . '/app/HarmonizedSC.php',
@@ -22,6 +24,7 @@ return array(
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
     'App\\Http\\Controllers\\EmployeeController' => $baseDir . '/app/Http/Controllers/EmployeeController.php',
     'App\\Http\\Controllers\\FacilityController' => $baseDir . '/app/Http/Controllers/FacilityController.php',
+    'App\\Http\\Controllers\\HarmonizedscController' => $baseDir . '/app/Http/Controllers/HarmonizedscController.php',
     'App\\Http\\Controllers\\HomeController' => $baseDir . '/app/Http/Controllers/HomeController.php',
     'App\\Http\\Controllers\\RegistryController' => $baseDir . '/app/Http/Controllers/RegistryController.php',
     'App\\Http\\Controllers\\StatusController' => $baseDir . '/app/Http/Controllers/StatusController.php',

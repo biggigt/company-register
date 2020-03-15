@@ -416,6 +416,8 @@ class ComposerStaticInit582fe97e93112eb531a5768b35669193
 
     public static $classMap = array (
         'App\\Company' => __DIR__ . '/../..' . '/app/Company.php',
+        'App\\CompanyInRegistryHarmonizedCode' => __DIR__ . '/../..' . '/app/CompanyInRegistryHarmonizedCode.php',
+        'App\\CompanyInRegistryStatus' => __DIR__ . '/../..' . '/app/CompanyInRegistryStatus.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\HarmonizedSC' => __DIR__ . '/../..' . '/app/HarmonizedSC.php',
@@ -431,6 +433,7 @@ class ComposerStaticInit582fe97e93112eb531a5768b35669193
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\EmployeeController' => __DIR__ . '/../..' . '/app/Http/Controllers/EmployeeController.php',
         'App\\Http\\Controllers\\FacilityController' => __DIR__ . '/../..' . '/app/Http/Controllers/FacilityController.php',
+        'App\\Http\\Controllers\\HarmonizedscController' => __DIR__ . '/../..' . '/app/Http/Controllers/HarmonizedscController.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\RegistryController' => __DIR__ . '/../..' . '/app/Http/Controllers/RegistryController.php',
         'App\\Http\\Controllers\\StatusController' => __DIR__ . '/../..' . '/app/Http/Controllers/StatusController.php',
