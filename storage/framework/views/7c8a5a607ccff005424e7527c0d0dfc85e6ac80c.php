@@ -36,7 +36,7 @@
             <td><?php echo e($company->subject_owner); ?></td>
             <td><a href="<?php echo e(route('companies.view',['id'=>$company->id])); ?>" class = "btn btn-info"><i class="folder open outline icon"></i></a>
               <a href="<?php echo e(route('companies.edit',['id'=>$company->id])); ?>" class = "btn btn-info"><i class="edit outline icon"></i></a>
-                <a href="<?php echo e(route('companies.destroy',['id'=>$company->id])); ?>" class = "btn btn-danger"><i class="trash alternate outline icon"></i></a></td>
+                <a href="<?php echo e(route('companies.destroy',['id'=>$company->id])); ?>" onclick="return confirm('Вы уверены что хотите удалить запись?');" class = "btn btn-danger"><i class="trash alternate outline icon"></i></a></td>
             
           </tr>
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

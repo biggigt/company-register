@@ -80,8 +80,8 @@
 <div class="item">
   <div class=" header">Справочники</div>
   <div class="menu">
+  	  <a class="item" href="/registrytypes">Реестры</a>
       <a class="item" href="/businesstypes">Правовая форма</a>
-      <a class="item" href="/registrytypes">Реестры</a>
       <a class="item" href="/facility">Виды предприятий</a>
       <a class="item" href="/status">Статусы предприятий</a>
       <a class="item" href="/activity">Виды деятельности</a>

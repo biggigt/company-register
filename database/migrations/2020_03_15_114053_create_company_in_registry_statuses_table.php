@@ -13,7 +13,8 @@ class CreateCompanyInRegistryStatusesTable extends Migration
      */
     public function up()
     {
-        Schema::create('company_in_registry_statuses', function (Blueprint $table) {
+        Schema::create('company_in_registry_statuses', function (Blueprint $table)
+        {
             $table->bigIncrements('id');
             $table->bigInteger('registries_id');
             $table->integer('statuses_id');
