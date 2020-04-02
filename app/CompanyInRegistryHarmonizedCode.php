@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class CompanyInRegistryHarmonizedCode extends Model
 {
-    protected $fillable = ['registries_id','harmonizedsc_id'];
+    protected $fillable = ['registries_id','harmonizedsc_id','activity_types'];
 }

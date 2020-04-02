@@ -1,4 +1,4 @@
-<?php
+уу<?php
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -17,6 +17,7 @@ class CreateCompanyInRegistryHarmonizedCodesTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('registries_id');
             $table->bigInteger('harmonizedcs_id');
+            $table->string('activity_types');
             $table->timestamps();
         });
     }

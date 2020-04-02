@@ -7,6 +7,10 @@ use App\Company;
 use App\business_type;
 use App\facility_type;
 use App\Subject;
+use App\activity_type;
+use App\status;
+use App\RegistryType;
+use App\HarmonizedSC;
 use App\Http\Controllers\RegistryController;
 
 class CompanyController extends Controller
@@ -113,6 +117,45 @@ class CompanyController extends Controller
         $company = Company::find($id);
         //delete
         $company->delete();
-        return redirect()->route('companies.index');
+        return redirect()->route('companies.indexnew registry();');
+    }
+    public function add_to_registry(){
+
+    }
+    public function add_harmonized_code_and_activity(){
+
+    }
+    public function add_status_to_registry_record(){
+
+    }
+    public function store_company_to_registry(Request $request){
+        
+        $registry = new registry();
+        $registry->registryTypeId = $registryId;
+        $registry->companyId = $id;
+        $registry->save();
+        $companyInRegistryHarmonizedCode = new CompanyInRegistryHarmonizedCode();
+        $companyInRegistryHarmonizedCode->registries_id = $registry->id;
+        $companyInRegistryHarmonizedCode->harmonizedsc_id = "";
+        $companyInRegistryHarmonizedCode->activity_types = "";
+        $companyInRegistryHarmonizedCode->save();
+        $companyInRegistryStatus = new CompanyInRegistryStatus();
+        $companyInRegistryStatus->registries_id = $registry->id;
+        $companyInRegistryStatus->statuses_id = "";
+        $companyInRegistryStatus->countries_id = "";
+        $companyInRegistryStatus->act = "";
+        $companyInRegistryStatus->state = "";
+        $companyInRegistryStatus->c_date = "";
+        $companyInRegistryStatus->save();
+
+    }
+    public function include_company_to_registry(){
+        $registry_types = RegistryType::all();
+        $companies = Company::all(['business_type','name']);
+        $harmonizedscs = HarmonizedSC::all();
+        $activity_types = activity_type::all();
+        $statuses = status::all();
+
+        return view('registry.include',['registry_types'=>$registry_types,'companies'=>$companies,'harmonizedscs'=>$harmonizedscs,'activity_types'=>$activity_types,'statuses'=>$statuses]);
     }
 }

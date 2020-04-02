@@ -50,6 +50,7 @@ Route::post('/facility/create','FacilityController@store')->name('facility.store
 Route::post('/facility/update','FacilityController@update')->name('facility.update');
 
 Route::get('/registry/view', 'RegistryController@find_registry')->name('registry.index');
+Route::get('/registry/include','CompanyController@include_company_to_registry')->name('registry.include');
 
 Route::get('/subjects', 'SubjectController@index')->name('subject.index');
 Route::get('/subject/{id}/edit','SubjectController@edit')->name('subject.edit');
