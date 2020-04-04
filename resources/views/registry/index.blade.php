@@ -1,35 +1,50 @@
 @extends('layouts.master')
-@section('title','Companies list')
+@section('title','Предприятия вошедшие в реестр')
 @section('content')
   <div class="ui container">
-    <table class="ui celled table">
+    <table class="ui small compact celled table">
       <thead>
         <tr>
-          <th>ID</th>
-          <th>Name</th>
-          <th>Registration number</th>
-          <th>Facility type</th>
-          <th>Subject acting</th>
-          <th>Subject owner</th>
-          <th>Registry</th>
-          <th>Options</th>
+            <th>Реестр</th>
+            <th>Основная информация</th>
+            <th>Хоз субъект, осуществляющий деятельность</th>
+            <th>Хоз субъект - владелец</th>
+            <th>Продукция и виды деятельности</th>
+            <th>Статус</th>
+            <th>Действия</th>
         </tr>
       </thead>
       @foreach($companies as $company)
-        <tr class = "text-center">
-          <td>{{ $company->id }}</td>
-          <td>{{ $company->business_type }} "{{ $company->name }}"</td>
-          <td>{{ $company->regnumber }}</td>
-          <td>{{ $company->facility_type }}</td>
-          <td>{{ $company->subject_acting }}</td>
-          <td>{{ $company->subject_owner }}</td>
-          <td>{{ $company->registryTypeId }}</td>
+        <tr class = "text-center top aligned">
+          <td>{{$company->registryType}}</td>
+          <td><b>Номер:</b> {{ $company->regnumber }}<br>
+              <b>Название:</b> {{$company->business_code}} "{{$company->name}}"<br>
+              <b>Адрес:</b> {{$company->address}}<br>
+              <b>Тип предприятия:</b> {{$company->facility_type_name}}
+          </td>
+          <td>{{ $company->sa_name }} -> {{ $company->sa_address }}</td>
+          <td>{{ $company->so_name }} -> {{ $company->so_address }}</td>
+          <td><b>{{ $company->hsc_code }} {{ $company->hsc_name }}</b><br>
+              [<i>{{ $company->activity_types }}</i>]
+          </td>
+          <td class="{{$company->status_color}}">
+              <b>{{ $company->status }}</b> | {{ $company->countries_id }} | Акт: {{ $company->act }} | Внесен: {{ $company->c_date }}
+          </td>
           <td><a href="{{route('companies.view',['id'=>$company->id])}}" class = "btn btn-info"><i class="folder open outline icon"></i></a>
             <a href="{{route('companies.edit',['id'=>$company->id])}}" class = "btn btn-info"><i class="edit outline icon"></i></a>
               <a href="{{route('companies.destroy',['id'=>$company->id])}}" class = "btn btn-danger"><i class="trash alternate outline icon"></i></a></td>
-          
+
         </tr>
       @endforeach
+        <tfoot>
+        <tr><th>3 Peop</th>
+            <th>2 Approved</th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr></tfoot>
     </table>
   </div>
 @endsection

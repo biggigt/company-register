@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="<?php echo e(asset('assets/semantic/semantic.min.css')); ?>">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <link href="<?php echo e(asset('assets/semantic/calendar.min.css')); ?>" rel="stylesheet" type="text/css" />
+  <script src="<?php echo e(asset('assets/semantic/calendar.min.js')); ?>"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="<?php echo e(asset('assets/semantic/semantic.min.js')); ?>"></script>
   <style type="text/css">
@@ -21,13 +23,13 @@
   <b>Реестр предприятий<br>ГИВФБ ПКР</b>
 </a>
 <a class="item" href="/introduction/new.html">
-  <b>0.5.10</b>
+  <b>0.7.5</b>
 </a>
 <div class="item">
   <div class="header">Реестры</div>
   <div class="menu">
 	<a class="item" href="/registry/view">Последние добавленные</a>
-  	<a class="item" href="/introduction/integrations.html">
+  	<a class="item" href="/registry/view/1">
     ЕАЭС</a>
   	<a class="item" href="/introduction/build-tools.html">
     Внутренний реестр</a>
@@ -38,50 +40,50 @@
 <div class="item">
   <div class="header">Предприятия</div>
   <div class="menu">
-    
+
       <a class="item" href="/companies">
         Просмотр
       </a>
-    
+
       <a class="item" href="/create">
         Добавить
       </a>
-    
+
   </div>
 </div>
 <div class="item">
   <div class="header">Cубъекты</div>
   <div class="menu">
-    
+
       <a class="item" href="/subjects">
         Просмотр
       </a>
-    
+
       <a class="item" href="/subject/create">
         Добавить
       </a>
-    
+
   </div>
 </div>
 <div class="item">
   <div class="header">Присвоение/обновление статуса</div>
   <div class="menu">
-    
-      <a class="item" href="/subjects">
+
+      <a class="item" href="/registry/include">
         Добавить в реестр
       </a>
-    
+
       <a class="item" href="/subject/create">
         Просмотреть/обновить статусы
       </a>
-    
+
   </div>
 </div>
 <div class="item">
   <div class=" header">Справочники</div>
   <div class="menu">
+  	  <a class="item" href="/registrytypes">Реестры</a>
       <a class="item" href="/businesstypes">Правовая форма</a>
-      <a class="item" href="/registrytypes">Реестры</a>
       <a class="item" href="/facility">Виды предприятий</a>
       <a class="item" href="/status">Статусы предприятий</a>
       <a class="item" href="/activity">Виды деятельности</a>
@@ -240,9 +242,10 @@
     }
   })
 ;
-  
+
   $(document).ready(function(){
   	$(".notification").delay(4000).slideUp(300);
     });
 </script>
-</html><?php /**PATH /Users/k.dzhunushaliev/dev/company-register/resources/views/layouts/master.blade.php ENDPATH**/ ?>
+</html>
+<?php /**PATH /Users/k.dzhunushaliev/dev/company-register/resources/views/layouts/master.blade.php ENDPATH**/ ?>

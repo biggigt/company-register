@@ -16,7 +16,7 @@ class CreateCompanyInRegistryHarmonizedCodesTable extends Migration
         Schema::create('company_in_registry_harmonized_codes', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('registries_id');
-            $table->bigInteger('harmonizedcs_id');
+            $table->bigInteger('harmonizedsc_id');
             $table->string('activity_types');
             $table->timestamps();
         });

@@ -15,10 +15,11 @@ class CreateRegistriesTable extends Migration
     {
         Schema::create('registries', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('registryTypeId');
+            $table->integer('registryTypeId');
             $table->integer('companyId');
             $table->date('c_date');
             $table->timestamps();
+            $table->unique(['registryTypeId', 'companyId']);
         });
     }
 

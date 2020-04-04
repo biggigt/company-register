@@ -9,8 +9,11 @@ use App\facility_type;
 use App\Subject;
 use App\activity_type;
 use App\status;
+use App\Registry;
 use App\RegistryType;
 use App\HarmonizedSC;
+use App\CompanyInRegistryHarmonizedCode;
+use App\CompanyInRegistryStatus;
 use App\Http\Controllers\RegistryController;
 
 class CompanyController extends Controller
@@ -129,29 +132,32 @@ class CompanyController extends Controller
 
     }
     public function store_company_to_registry(Request $request){
-        
+
         $registry = new registry();
-        $registry->registryTypeId = $registryId;
-        $registry->companyId = $id;
+        $registry->registryTypeId = $request->input('registry_name');
+        $registry->companyId = $request->input('company_name');
+        $registry->c_date = $request->input('c_date');
         $registry->save();
         $companyInRegistryHarmonizedCode = new CompanyInRegistryHarmonizedCode();
         $companyInRegistryHarmonizedCode->registries_id = $registry->id;
-        $companyInRegistryHarmonizedCode->harmonizedsc_id = "";
-        $companyInRegistryHarmonizedCode->activity_types = "";
+        $companyInRegistryHarmonizedCode->harmonizedsc_id = $request->input('harmonizedsc');
+        $activites = $request->input('activityTypes');
+        $activites = implode(',', $activites);
+        $companyInRegistryHarmonizedCode->activity_types = $activites;
         $companyInRegistryHarmonizedCode->save();
         $companyInRegistryStatus = new CompanyInRegistryStatus();
         $companyInRegistryStatus->registries_id = $registry->id;
-        $companyInRegistryStatus->statuses_id = "";
-        $companyInRegistryStatus->countries_id = "";
-        $companyInRegistryStatus->act = "";
-        $companyInRegistryStatus->state = "";
-        $companyInRegistryStatus->c_date = "";
+        $companyInRegistryStatus->statuses_id = $request->input('status');
+        $companyInRegistryStatus->countries_id = $request->input('country');
+        $companyInRegistryStatus->act = $request->input('act');
+        $companyInRegistryStatus->state = "active";
+        $companyInRegistryStatus->c_date = $request->input('c_date');
         $companyInRegistryStatus->save();
 
     }
     public function include_company_to_registry(){
         $registry_types = RegistryType::all();
-        $companies = Company::all(['business_type','name']);
+        $companies = Company::all(['id','business_type','name']);
         $harmonizedscs = HarmonizedSC::all();
         $activity_types = activity_type::all();
         $statuses = status::all();

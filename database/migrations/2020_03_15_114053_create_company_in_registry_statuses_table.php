@@ -18,7 +18,7 @@ class CreateCompanyInRegistryStatusesTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('registries_id');
             $table->integer('statuses_id');
-            $table->integer('countries_id');
+            $table->string('countries_id');
             $table->string('act');
             $table->enum('state', ['active', 'deactivated']);
             $table->date('c_date');
