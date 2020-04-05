@@ -10,14 +10,14 @@
 			  Добавить
 			</a>
 		</div>
-		
+
 		<table class="ui celled table">
 			<thead>
 				<tr>
 					<th>ID</th>
-					<th>Code</th>
-					<th>Business type name</th>
-					<th>Options</th>
+					<th>Сокращение</th>
+					<th>Название</th>
+					<th>Действия</th>
 				</tr>
 			</thead>
 			@foreach($business_types as $business_type)

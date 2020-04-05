@@ -1,1 +1,2 @@
 php artisan migrate:refresh --path=database/migrations/2020_01_14_091241_create_companies_table.php
+php artisan migrate --path=database/migrations/2020_01_16_093308_create_business_types_table.php

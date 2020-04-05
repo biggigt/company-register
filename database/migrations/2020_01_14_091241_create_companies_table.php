@@ -30,10 +30,7 @@ class CreateCompaniesTable extends Migration
             $table->foreign('subject_owner')->references('id')->on('subjects');
         });
     }
-    public function business_type()
-    {
-        return $this->hasOne('App\business_type');
-    }
+
 
     /**
      * Reverse the migrations.

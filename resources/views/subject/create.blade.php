@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title','Create subject')
+@section('title','Создать субъект')
 @section('content')
   <div class="ui container">
       <div class="ui menu" >

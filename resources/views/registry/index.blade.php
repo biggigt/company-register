@@ -10,8 +10,11 @@
             <th>Хоз субъект, осуществляющий деятельность</th>
             <th>Хоз субъект - владелец</th>
             <th>Продукция и виды деятельности</th>
-            <th>Статус</th>
+            <th class="three wide">Статус</th>
+            @guest
+            @else
             <th>Действия</th>
+            @endguest
         </tr>
       </thead>
       @foreach($companies as $company)
@@ -30,10 +33,12 @@
           <td class="{{$company->status_color}}">
               <b>{{ $company->status }}</b> | {{ $company->countries_id }} | Акт: {{ $company->act }} | Внесен: {{ $company->c_date }}
           </td>
+            @guest
+            @else
           <td><a href="{{route('companies.view',['id'=>$company->id])}}" class = "btn btn-info"><i class="folder open outline icon"></i></a>
-            <a href="{{route('companies.edit',['id'=>$company->id])}}" class = "btn btn-info"><i class="edit outline icon"></i></a>
+              <a href="{{route('companies.edit',['id'=>$company->id])}}" class = "btn btn-info"><i class="edit outline icon"></i></a>
               <a href="{{route('companies.destroy',['id'=>$company->id])}}" class = "btn btn-danger"><i class="trash alternate outline icon"></i></a></td>
-
+            @endguest
         </tr>
       @endforeach
         <tfoot>
@@ -43,7 +48,10 @@
             <th></th>
             <th></th>
             <th></th>
+            @guest
+            @else
             <th></th>
+            @endguest
         </tr></tfoot>
     </table>
   </div>

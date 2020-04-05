@@ -31,10 +31,8 @@
 	<a class="item" href="/registry/view">Последние добавленные</a>
   	<a class="item" href="/registry/view/1">
     ЕАЭС</a>
-  	<a class="item" href="/introduction/build-tools.html">
+  	<a class="item" href="/registry/view/2">
     Внутренний реестр</a>
-  	<a class="item" href="/introduction/advanced-usage.html">
-    1а</a>
   </div>
 </div>
 <div class="item">
@@ -188,7 +186,6 @@
 </div> -->
 </div>
 
-</div>
 </div>
 <div class="ui mini modal confirm transition hidden">
 	<div class="header">

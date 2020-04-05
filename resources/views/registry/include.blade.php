@@ -66,7 +66,7 @@
                             <i class="dropdown icon"></i>
                             <div class="default text">Выберите страну</div>
                             <div class="menu">
-                                <div class="item" data-value="eaeu"><i class=" flag"></i>Страны Таможенного Союза</div>
+                                <div class="item" data-value="ЕАЭС"><i class=" flag"></i>Страны Таможенного Союза</div>
                                 <div class="item" data-value="af"><i class="af flag"></i>Afghanistan</div>
                                 <div class="item" data-value="ax"><i class="ax flag"></i>Aland Islands</div>
                                 <div class="item" data-value="al"><i class="al flag"></i>Albania</div>

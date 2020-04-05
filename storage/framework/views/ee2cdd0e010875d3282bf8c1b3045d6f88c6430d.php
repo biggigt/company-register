@@ -9,14 +9,14 @@
 			  Добавить
 			</a>
 		</div>
-		
+
 		<table class="ui celled table">
 			<thead>
 				<tr>
 					<th>ID</th>
-					<th>Code</th>
-					<th>Business type name</th>
-					<th>Options</th>
+					<th>Сокращение</th>
+					<th>Название</th>
+					<th>Действия</th>
 				</tr>
 			</thead>
 			<?php $__currentLoopData = $business_types; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $business_type): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
@@ -33,4 +33,5 @@
 		</table>
 	</div>
 <?php $__env->stopSection(); ?>
+
 <?php echo $__env->make('layouts.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /Users/k.dzhunushaliev/dev/company-register/resources/views/businesstype/index.blade.php ENDPATH**/ ?>

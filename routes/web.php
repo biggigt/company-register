@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
-Route::get('/companies', 'CompanyController@index')->name('companies.index');
+Route::get('/companies', 'CompanyController@index')->name('companies.index')->middleware('isAdmin');
 Route::get('/companies/{id}/edit','CompanyController@edit')->name('companies.edit');
 Route::get('/companies/{id}/view','CompanyController@view')->name('companies.view');
 Route::get('/companies/{id}/delete','CompanyController@destroy')->name('companies.destroy');
