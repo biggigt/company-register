@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title','Facility types list')
+@section('title','Виды предприятий')
 @section('content')
 	<div class="ui container">
 		<div class="ui menu" >
@@ -10,14 +10,14 @@
 			  Добавить
 			</a>
 		</div>
-		
+
 		<table class="ui celled table">
 			<thead>
 				<tr>
 					<th>ID</th>
-					<th>Code</th>
-					<th>Facility type name</th>
-					<th>Options</th>
+					<th>Код</th>
+					<th>Название</th>
+					<th>Действия</th>
 				</tr>
 			</thead>
 			@foreach($facility_types as $facility_type)

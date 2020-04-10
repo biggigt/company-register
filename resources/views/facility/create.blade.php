@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title','Create facility type')
+@section('title','Добавить вид предприятия')
 @section('content')
 	<div class="ui container">
 		<div class="ui menu" >
@@ -15,17 +15,17 @@
 				<form class="ui form" action="{{route('facility.store')}}" method = "post">
 			        @csrf
 			        <div class="field">
-			          <label for="facility_type_code">Type code:</label>
+			          <label for="facility_type_code">Код:</label>
 			          <input type="text" name = "facility_type_code" id = "facility_type_code" class="form-control" required>
 			        </div>
 			        <div class="field">
-			          <label for="facility_type_name">Name:</label>
+			          <label for="facility_type_name">Название:</label>
 			          <input type="text" name = "facility_type_name" id = "facility_type_name" class="form-control" required>
 			        </div>
-			        <button type = "submit" class = "ui button">Create</button>
+			        <button type = "submit" class = "ui button">Добавить</button>
 			    </form>
 			</div>
 		</div>
 	</div>
-	
+
 @endsection
