@@ -15,14 +15,14 @@ class CreateCompaniesTable extends Migration
     {
         Schema::create('companies', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('business_type');
+            $table->unsignedBigInteger('business_type');
             $table->string('name');
             $table->string('regnumber');
             $table->string('okpo')->nullable();
-            $table->integer('facility_type');
+            $table->unsignedBigInteger('facility_type');
             $table->string('address');
-            $table->integer('subject_acting');
-            $table->integer('subject_owner');
+            $table->unsignedBigInteger('subject_acting');
+            $table->unsignedBigInteger('subject_owner');
             $table->timestamps();
             $table->foreign('business_type')->references('id')->on('business_types');
             $table->foreign('facility_type')->references('id')->on('facility_types');
