@@ -1,7 +1,3 @@
-<div class="ui success message notification">
-	<i class="close icon"></i>
-	<div class="header">
-	  Операция выполнена успешно.
-	</div>
-	<p>{{ $slot }}</p>
-</div>
+<script type="text/javascript">
+    $(document).ready(function(){toast('{{$status}}'||'blue','{{$header}}'||'ОПОВЕЩЕНИЕ','{{$info}}');});
+</script>

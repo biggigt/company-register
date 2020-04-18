@@ -23,7 +23,7 @@ class BusinesstypeController extends Controller
     	$business_type->code = $request->input('business_type_code');
     	$business_type->business_type_name = $request->input('business_type_name');
     	$business_type->save();
-    	return redirect()->route('businesstype.index')->with('info','Business type added successfully');
+    	return redirect()->route('businesstype.index')->with('info','Вид ОПФ добавлен успешно.')->with('status','green')->with('header','ДОБАВЛЕНИЕ');
     }
 
     public function edit($id){

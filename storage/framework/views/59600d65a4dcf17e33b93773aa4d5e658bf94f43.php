@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="<?php echo e(asset('assets/semantic/semantic.min.css')); ?>">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <link href="<?php echo e(asset('assets/semantic/calendar.min.css')); ?>" rel="stylesheet" type="text/css" />
-  <script src="<?php echo e(asset('assets/semantic/calendar.min.js')); ?>"></script>
+
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="<?php echo e(asset('assets/semantic/semantic.min.js')); ?>"></script>
   <style type="text/css">
@@ -68,11 +68,13 @@
   <div class="menu">
 
       <a class="item" href="/registry/include">
-        Добавить в реестр
+          Добавить в реестр
       </a>
-
-      <a class="item" href="/subject/create">
-        Просмотреть/обновить статусы
+      <a class="item" href="/registry/addhscstatus">
+          Добавить продукцию и статус
+      </a>
+      <a class="item" href="/registry/addstatus">
+          Просмотреть/обновить статусы
       </a>
 
   </div>
@@ -148,8 +150,18 @@
 <!-- <div class="ui container" style="padding-top: 20px;position: relative;min-height: 80%;"> -->
 	<?php if(session('info')): ?>
 		<?php $__env->startComponent('notification'); ?>
-			<?php echo e(session('info')); ?>
+            <?php $__env->slot('header'); ?>
+                <?php echo e(session('header')); ?>
 
+            <?php $__env->endSlot(); ?>
+            <?php $__env->slot('info'); ?>
+                <?php echo e(session('info')); ?>
+
+            <?php $__env->endSlot(); ?>
+            <?php $__env->slot('status'); ?>
+                <?php echo e(session('status')); ?>
+
+            <?php $__env->endSlot(); ?>
 		<?php echo $__env->renderComponent(); ?>
 	<?php endif; ?>
   	<?php echo $__env->yieldContent('content'); ?>
@@ -238,7 +250,17 @@
       trigger: ' .title '
     }
   })
-;
+  ;
+  function toast(status,header,message){
+      $('body')
+          .toast({
+              title: header,
+              message: message,
+              showProgress: 'bottom',
+              showIcon: 'hand peace outline',
+              classProgress: status
+          });
+  };
 
   $(document).ready(function(){
   	$(".notification").delay(4000).slideUp(300);

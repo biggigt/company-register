@@ -1,4 +1,4 @@
-<?php $__env->startSection('title','Edit Company'); ?>
+<?php $__env->startSection('title','Редактирование информации о компании'); ?>
 
 <?php $__env->startSection('content'); ?>
   <div class="row">

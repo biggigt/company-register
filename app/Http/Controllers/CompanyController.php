@@ -142,18 +142,18 @@ class CompanyController extends Controller
         $companyInRegistryHarmonizedCode->registries_id = $registry->id;
         $companyInRegistryHarmonizedCode->harmonizedsc_id = $request->input('harmonizedsc');
         $activites = $request->input('activityTypes');
-        $activites = implode(',', $activites);
+        $activites = implode(', ', $activites);
         $companyInRegistryHarmonizedCode->activity_types = $activites;
         $companyInRegistryHarmonizedCode->save();
         $companyInRegistryStatus = new CompanyInRegistryStatus();
-        $companyInRegistryStatus->registries_id = $registry->id;
+        $companyInRegistryStatus->registries_hsc_id = $companyInRegistryHarmonizedCode->id;
         $companyInRegistryStatus->statuses_id = $request->input('status');
         $companyInRegistryStatus->countries_id = $request->input('country');
         $companyInRegistryStatus->act = $request->input('act');
         $companyInRegistryStatus->state = "active";
         $companyInRegistryStatus->c_date = $request->input('c_date');
         $companyInRegistryStatus->save();
-
+        return redirect()->route('registry.include')->with('info','Предприятие успешно добавлено в реестр и ему присвоен статус.');
     }
     public function include_company_to_registry(){
         $registry_types = RegistryType::all();

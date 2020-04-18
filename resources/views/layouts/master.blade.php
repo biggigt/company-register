@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="{{ asset('assets/semantic/semantic.min.css') }}">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <link href="{{ asset('assets/semantic/calendar.min.css') }}" rel="stylesheet" type="text/css" />
-  <script src="{{ asset('assets/semantic/calendar.min.js') }}"></script>
+{{--  <link href="{{ asset('assets/semantic/calendar.min.css') }}" rel="stylesheet" type="text/css" />--}}
+{{--  <script src="{{ asset('assets/semantic/calendar.min.js') }}"></script>--}}
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="{{ asset('assets/semantic/semantic.min.js') }}"></script>
   <style type="text/css">
@@ -68,11 +68,13 @@
   <div class="menu">
 
       <a class="item" href="/registry/include">
-        Добавить в реестр
+          Добавить в реестр
       </a>
-
-      <a class="item" href="/subject/create">
-        Просмотреть/обновить статусы
+      <a class="item" href="/registry/addhscstatus">
+          Добавить продукцию и статус
+      </a>
+      <a class="item" href="/registry/addstatus">
+          Просмотреть/обновить статусы
       </a>
 
   </div>
@@ -148,7 +150,15 @@
 <!-- <div class="ui container" style="padding-top: 20px;position: relative;min-height: 80%;"> -->
 	@if (session('info'))
 		@component('notification')
-			{{ session('info') }}
+            @slot('header')
+                {{ session('header') }}
+            @endslot
+            @slot('info')
+                {{ session('info') }}
+            @endslot
+            @slot('status')
+                {{ session('status') }}
+            @endslot
 		@endcomponent
 	@endif
   	@yield('content')
@@ -237,7 +247,17 @@
       trigger: ' .title '
     }
   })
-;
+  ;
+  function toast(status,header,message){
+      $('body')
+          .toast({
+              title: header,
+              message: message,
+              showProgress: 'bottom',
+              showIcon: 'hand peace outline',
+              classProgress: status
+          });
+  };
 
   $(document).ready(function(){
   	$(".notification").delay(4000).slideUp(300);

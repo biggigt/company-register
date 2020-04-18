@@ -1,8 +1,4 @@
-<div class="ui success message notification">
-	<i class="close icon"></i>
-	<div class="header">
-	  Операция выполнена успешно.
-	</div>
-	<p><?php echo e($slot); ?></p>
-</div>
+<script type="text/javascript">
+    $(document).ready(function(){toast('<?php echo e($status ?? ''); ?>'||'blue','<?php echo e($header ?? ''); ?>'||'ОПОВЕЩЕНИЕ','<?php echo e($info ?? ''); ?>');});
+</script>
 <?php /**PATH /Users/k.dzhunushaliev/dev/company-register/resources/views/notification.blade.php ENDPATH**/ ?>

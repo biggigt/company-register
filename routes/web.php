@@ -52,6 +52,10 @@ Route::post('/facility/update','FacilityController@update')->name('facility.upda
 Route::get('/registry/view/{id}', 'RegistryController@find_registry')->name('registry.index');
 Route::get('/registry/include','CompanyController@include_company_to_registry')->name('registry.include');
 Route::post('/registry/include','CompanyController@store_company_to_registry')->name('registry.include');
+Route::get('/registry/addhscstatus','CompanyInRegistryStatus@addHscStatusCreate')->name('registry.addhscstatus');
+Route::post('/registry/addhscstatus','CompanyInRegistryStatus@addHscStatusStore')->name('registry.addhscstatus');
+Route::get('/registry/addstatus','CompanyInRegistryStatus@create')->name('registry.addstatus');
+Route::post('/registry/addstatus','CompanyInRegistryStatus@store')->name('registry.addstatus');
 //subjects
 Route::get('/subjects', 'SubjectController@index')->name('subject.index');
 Route::get('/subject/{id}/edit','SubjectController@edit')->name('subject.edit');
