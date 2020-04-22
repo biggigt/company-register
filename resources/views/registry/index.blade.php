@@ -43,8 +43,8 @@
         </tr>
       @endforeach
         <tfoot>
-        <tr><th>3 Peop</th>
-            <th>2 Approved</th>
+        <tr><th>-</th>
+            <th>-</th>
             <th></th>
             <th></th>
             <th></th>

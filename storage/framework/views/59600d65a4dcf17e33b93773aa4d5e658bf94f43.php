@@ -19,10 +19,10 @@
 <body>
 <div class="pusher"><div class="full height">
 <div class="toc" style="width:250px;position: fixed;height: 100%;"><div class="ui vertical inverted menu" style="width: 250px;height: 100%;background: #005d9c;border-radius: 0px;overflow: auto;">
-<a class="item" href="/introduction/getting-started.html">
+<a class="item" href="/">
   <b>Реестр предприятий<br>ГИВФБ ПКР</b>
 </a>
-<a class="item" href="/introduction/new.html">
+<a class="item" href="/home">
   <b>0.7.5</b>
 </a>
 <div class="item">
@@ -129,9 +129,34 @@
 		  <option value="HO">Усиленный контроль</option>
 		</select>
 
-	    <p class="transition hidden">A dog is a type of domesticated animal. Known for its loyalty and faithfulness, it can be found as a welcome guest in many households across the world.</p>
+	    <p class="transition hidden">Раздел поиска все еще в разработке! Извините.</p>
 	  </div>
 	</div>
+</div>
+<div class="item">
+    <?php if(Route::has('login')): ?>
+        <?php if(auth()->guard()->check()): ?>
+            <a href="<?php echo e(url('/home')); ?>">Dashboard</a>
+            |
+            <a href="<?php echo e(route('logout')); ?>"
+               onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                <span class="ui medium inverted red text"><?php echo e(__('auth.logout')); ?></span>
+            </a>
+
+            <form id="logout-form" action="<?php echo e(route('logout')); ?>" method="POST" style="display: none;">
+                <?php echo csrf_field(); ?>
+            </form>
+        <?php else: ?>
+            <a href="<?php echo e(route('login')); ?>" class="ui right labeled icon tiny button">
+                <i class="right arrow icon"></i>
+                <?php echo e(__('auth.login')); ?>
+
+            </a>
+            <?php if(Route::has('register')): ?>
+                <a href="<?php echo e(route('register')); ?>">Register</a>
+            <?php endif; ?>
+        <?php endif; ?>
+    <?php endif; ?>
 </div>
 <div class="item" style="position: relative;bottom: 0px;">
 	<div class=" header"></div>

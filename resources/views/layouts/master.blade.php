@@ -19,10 +19,10 @@
 <body>
 <div class="pusher"><div class="full height">
 <div class="toc" style="width:250px;position: fixed;height: 100%;"><div class="ui vertical inverted menu" style="width: 250px;height: 100%;background: #005d9c;border-radius: 0px;overflow: auto;">
-<a class="item" href="/introduction/getting-started.html">
+<a class="item" href="/">
   <b>Реестр предприятий<br>ГИВФБ ПКР</b>
 </a>
-<a class="item" href="/introduction/new.html">
+<a class="item" href="/home">
   <b>0.7.5</b>
 </a>
 <div class="item">
@@ -129,9 +129,33 @@
 		  <option value="HO">Усиленный контроль</option>
 		</select>
 
-	    <p class="transition hidden">A dog is a type of domesticated animal. Known for its loyalty and faithfulness, it can be found as a welcome guest in many households across the world.</p>
+	    <p class="transition hidden">Раздел поиска все еще в разработке! Извините.</p>
 	  </div>
 	</div>
+</div>
+<div class="item">
+    @if (Route::has('login'))
+        @auth
+            <a href="{{ url('/home') }}">Dashboard</a>
+            |
+            <a href="{{ route('logout') }}"
+               onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                <span class="ui medium inverted red text">{{ __('auth.logout') }}</span>
+            </a>
+
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+            </form>
+        @else
+            <a href="{{ route('login') }}" class="ui right labeled icon tiny button">
+                <i class="right arrow icon"></i>
+                {{ __('auth.login') }}
+            </a>
+            @if (Route::has('register'))
+                <a href="{{ route('register') }}">Register</a>
+            @endif
+        @endauth
+    @endif
 </div>
 <div class="item" style="position: relative;bottom: 0px;">
 	<div class=" header"></div>

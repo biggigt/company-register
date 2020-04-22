@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title','Companies list')
+@section('title','Список предприятий')
 @section('content')
 <div class="ui container" >
   <div class="ui menu" >
