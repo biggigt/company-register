@@ -43,7 +43,7 @@ class HarmonizedscController extends Controller
         $harmonizedsc->hsc_name = $request->input('hsc_name');
         $harmonizedsc->description = $request->input('hsc_description');
         $harmonizedsc->save();
-        return redirect()->route('harmonizedsc.index')->with('info','Код ТН ВЭД добавлен успешно.');
+        return redirect()->route('harmonizedsc.index')->with('info','Код ТН ВЭД добавлен успешно.')->with('status','green')->with('header','Действие успешно');
     }
 
     /**
@@ -84,7 +84,7 @@ class HarmonizedscController extends Controller
         $harmonizedsc->hsc_name = $request->input('hsc_name');
         $harmonizedsc->description = $request->input('hsc_description');
         $harmonizedsc->save();
-        return redirect()->route('harmonizedsc.index')->with('info','Код ТН ВЭД обновлен успешно.');
+        return redirect()->route('harmonizedsc.index')->with('info','Код ТН ВЭД обновлен успешно.')->with('status','green')->with('header','Действие выполнено');
     }
 
     /**
@@ -97,6 +97,6 @@ class HarmonizedscController extends Controller
     {
         $harmonizedsc = HarmonizedSC::find($id);
         $harmonizedsc->delete();
-        return redirect()->route('harmonizedsc.index')->with('info','Код ТН ВЭД удален успешно.');
+        return redirect()->route('harmonizedsc.index')->with('info','Код ТН ВЭД удален успешно.')->with('status','green')->with('header','Действие выполнено');
     }
 }

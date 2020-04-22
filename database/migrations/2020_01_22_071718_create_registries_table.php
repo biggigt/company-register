@@ -21,6 +21,7 @@ class CreateRegistriesTable extends Migration
             $table->timestamps();
             $table->unique(['registryTypeId', 'companyId']);
         });
+        DB::update("ALTER TABLE registries AUTO_INCREMENT = 1000;");
     }
 
     /**

@@ -23,6 +23,7 @@ class CreateSubjectsTable extends Migration
             $table->string('comment')->nullable();
             $table->timestamps();
         });
+        DB::update("ALTER TABLE subjects AUTO_INCREMENT = 1000;");
     }
 
     /**

@@ -98,4 +98,4 @@
         </div>
     </body>
 </html>
-<?php /**PATH D:\Reestr code\company-register\resources\views/welcome.blade.php ENDPATH**/ ?>
+<?php /**PATH D:\Reestr code\company-register\resources\views/fancy.welcome.blade.php ENDPATH**/ ?>

@@ -24,6 +24,7 @@ class CreateCompanyInRegistryStatusesTable extends Migration
             $table->date('c_date');
             $table->timestamps();
         });
+        DB::update("ALTER TABLE company_in_registry_statuses AUTO_INCREMENT = 1000;");
     }
 
     /**

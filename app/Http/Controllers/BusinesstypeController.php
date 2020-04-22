@@ -23,7 +23,7 @@ class BusinesstypeController extends Controller
     	$business_type->code = $request->input('business_type_code');
     	$business_type->business_type_name = $request->input('business_type_name');
     	$business_type->save();
-    	return redirect()->route('businesstype.index')->with('info','Вид ОПФ добавлен успешно.')->with('status','green')->with('header','ДОБАВЛЕНИЕ');
+    	return redirect()->route('businesstype.index')->with('info','Вид ОПФ добавлен успешно.')->with('status','green')->with('header','Действие выполнено');
     }
 
     public function edit($id){
@@ -36,12 +36,12 @@ class BusinesstypeController extends Controller
     	$business_type->code = $request->input('business_type_code');
     	$business_type->business_type_name = $request->input('business_type_name');
     	$business_type->save();
-    	return redirect()->route('businesstype.index')->with('info','Business type updated successfully');
+    	return redirect()->route('businesstype.index')->with('info','Вид ОПФ обновлен успешно.')->with('status','green')->with('header','Действие выполнено');
     }
 
     public function destroy($id){
     	$business_type = business_type::find($id);
     	$business_type->delete();
-    	return redirect()->route('businesstype.index');
+    	return redirect()->route('businesstype.index')->with('info','Вид ОПФ удален успешно.')->with('status','green')->with('header','Действие выполнено');
     }
 }

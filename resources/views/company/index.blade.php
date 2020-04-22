@@ -36,10 +36,9 @@
             <td>{{ $company->subject_acting }}</td>
             <td>{{ $company->subject_owner }}</td>
             <td><a href="{{route('companies.view',['id'=>$company->id])}}" class = "btn btn-info"><i class="folder open outline icon"></i></a>
-              <a href="{{route('companies.edit',['id'=>$company->id])}}" class = "btn btn-info"><i class="edit outline icon"></i></a>
-                <a href="{{route('companies.destroy',['id'=>$company->id])}}" onclick="return confirm('Вы уверены что хотите удалить запись?');" class = "btn btn-danger"><i class="trash alternate outline icon"></i></a></td>
-
-          </tr>
+                <a href="{{route('companies.edit',['id'=>$company->id])}}" class = "btn btn-info"><i class="edit outline icon"></i></a>
+                <a href="{{route('companies.destroy',['id'=>$company->id])}}" onclick="return getConfirm(this);" class = "btn btn-danger"><i class="trash alternate outline icon"></i></a></td>
+            </tr>
         @endforeach
       </table>
     </div>

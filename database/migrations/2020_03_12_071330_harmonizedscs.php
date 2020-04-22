@@ -21,6 +21,7 @@ class HarmonizedSCS extends Migration
             $table->longText('description')->nullable();
             $table->timestamps();
         });
+        DB::update("ALTER TABLE harmonized_s_c_s AUTO_INCREMENT = 1000;");
     }
 
     /**

@@ -22,7 +22,7 @@ class StatusController extends Controller
     	$status->code = $request->input('status_code');
     	$status->status = $request->input('status_name');
     	$status->save();
-    	return redirect()->route('status.index')->with('info','Статус предприятий добавлен успешно.');
+    	return redirect()->route('status.index')->with('info','Статус предприятий добавлен успешно.')->with('status','green')->with('header','Действие выполнено');
     }
 
     public function edit($id){
@@ -35,12 +35,12 @@ class StatusController extends Controller
     	$status->code = $request->input('status_code');
     	$status->status = $request->input('status_name');
     	$status->save();
-    	return redirect()->route('status.index')->with('info','Статус предприятий обновлен успешно.');
+    	return redirect()->route('status.index')->with('info','Статус предприятий обновлен успешно.')->with('status','green')->with('header','Действие выполнено');
     }
 
     public function destroy($id){
     	$status = status::find($id);
     	$status->delete();
-    	return redirect()->route('status.index');
+    	return redirect()->route('status.index')->with('info','Статус предприятий удален успешно.')->with('status','green')->with('header','Действие выполнено');
     }
 }

@@ -29,6 +29,7 @@ class CreateCompaniesTable extends Migration
             $table->foreign('subject_acting')->references('id')->on('subjects');
             $table->foreign('subject_owner')->references('id')->on('subjects');
         });
+        DB::update("ALTER TABLE companies AUTO_INCREMENT = 1000;");
     }
 
 

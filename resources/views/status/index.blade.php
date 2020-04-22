@@ -24,8 +24,9 @@
           <td>{{ $status->id }}</td>
           <td>{{ $status->code }}</td>
           <td>{{ $status->status }}</td>
-          <td><a href="{{route('status.edit',['id'=>$status->id])}}" class = "btn btn-info"><i class="edit outline icon"></i></a>
-            <a href="{{route('status.destroy',['id'=>$status->id])}}" onclick="return confirm('Вы уверены что хотите удалить запись?');" class = "btn btn-danger"><i class="trash alternate outline icon"></i></a>
+          <td>
+            <a href="{{route('status.edit',['id'=>$status->id])}}" class = "btn btn-info"><i class="edit outline icon"></i></a>
+            <a href="{{route('status.destroy',['id'=>$status->id])}}" onclick="return getConfirm(this);" class = "btn btn-danger"><i class="trash alternate outline icon"></i></a>
           </td>
         </tr>
       @endforeach

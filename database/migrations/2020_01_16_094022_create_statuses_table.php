@@ -19,6 +19,7 @@ class CreateStatusesTable extends Migration
             $table->string('status');
             $table->timestamps();
         });
+        DB::update("ALTER TABLE statuses AUTO_INCREMENT = 1000;");
     }
 
     /**

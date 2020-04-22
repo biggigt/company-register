@@ -1,5 +1,6 @@
-<?php $__env->startSection('title','Registries list'); ?>
-<?php $__env->startSection('content'); ?>
+@extends('layouts.home')
+@section('title','Registries list')
+@section('content')
 <!-- Page Contents -->
 <div class="pusher">
   <div class="ui inverted vertical masthead center aligned segment">
@@ -148,6 +149,4 @@
     </div>
   </div>
 </div>
-<?php $__env->stopSection(); ?>
-
-<?php echo $__env->make('layouts.home', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\Reestr code\company-register\company-register\resources\views/fancy.welcome.blade.php ENDPATH**/ ?>
+@endsection

@@ -19,6 +19,7 @@ class CreateRegistryTypesTable extends Migration
             $table->string('registryDescription');
             $table->timestamps();
         });
+        DB::update("ALTER TABLE registry_types AUTO_INCREMENT = 1000;");
     }
 
     /**

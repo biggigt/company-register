@@ -19,6 +19,7 @@ class CreateActivityTypesTable extends Migration
             $table->string('activity_type_name');
             $table->timestamps();
         });
+        DB::update("ALTER TABLE activity_types AUTO_INCREMENT = 1000;");
     }
 
     /**

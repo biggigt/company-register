@@ -23,7 +23,7 @@ class FacilityController extends Controller
     	$facility_type->code = $request->input('facility_type_code');
     	$facility_type->facility_type_name = $request->input('facility_type_name');
     	$facility_type->save();
-    	return redirect()->route('facility.index')->with('info','Facility type added successfully');
+    	return redirect()->route('facility.index')->with('info','Тип предприятия добавлен успешно.')->with('status','green')->with('header','Действие выполнено');
     }
 
     public function edit($id){
@@ -36,12 +36,12 @@ class FacilityController extends Controller
     	$facility_type->code = $request->input('facility_type_code');
     	$facility_type->facility_type_name = $request->input('facility_type_name');
     	$facility_type->save();
-    	return redirect()->route('facility.index')->with('info','Facility type updated successfully');
+    	return redirect()->route('facility.index')->with('info','Тип предприятия обновлен успешно.')->with('status','green')->with('header','Действие выполнено');
     }
 
     public function destroy($id){
     	$facility_type = facility_type::find($id);
     	$facility_type->delete();
-    	return redirect()->route('facility.index')->with('info','Facility type successfully deleted.');
+    	return redirect()->route('facility.index')->with('info','Тип предприятия удален успешно.')->with('status','green')->with('header','Действие выполнено');
     }
 }

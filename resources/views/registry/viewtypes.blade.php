@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title','Registries list')
+@section('title','Список реестров')
 @section('content')
 	<div class="ui container">
 		<div class="ui menu" >
@@ -10,7 +10,7 @@
 			  Добавить
 			</a>
 		</div>
-		
+
 		<table class="ui celled table">
 			<thead>
 				<tr>
@@ -27,7 +27,7 @@
 					<td>{{ $registryType->registryDescription }}</td>
 					<td>
 						<a href="{{route('registry.edit',['id'=>$registryType->id])}}" class = "btn btn-info"><i class="edit outline icon"></i></a>
-        				<a href="{{route('registry.destroy',['id'=>$registryType->id])}}" onclick="return confirm('Вы уверены что хотите удалить запись?');" class = "btn btn-danger"><i class="trash alternate outline icon"></i></a>
+        				<a href="{{route('registry.destroy',['id'=>$registryType->id])}}" onclick="return getConfirm(this);" class = "btn btn-danger"><i class="trash alternate outline icon"></i></a>
 					</td>
 				</tr>
 			@endforeach

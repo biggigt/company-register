@@ -49,7 +49,7 @@ class CompanyInRegistryStatus extends Controller
         $companyInRegistryStatus->state = "active";
         $companyInRegistryStatus->c_date = $request->input('c_date');
         $companyInRegistryStatus->save();
-        return redirect()->route('registry.addstatus')->with('info','Успешно добавлен статус для предприятия.');
+        return redirect()->route('registry.addstatus')->with('info','Успешно добавлен статус для предприятия.')->with('status','green')->with('header','Действие выполнено');
     }
 
     /**
@@ -120,6 +120,6 @@ class CompanyInRegistryStatus extends Controller
         $companyInRegistryStatus->state = "active";
         $companyInRegistryStatus->c_date = $request->input('c_date');
         $companyInRegistryStatus->save();
-        return redirect()->route('registry.addhscstatus')->with('info','Успешно добавлена продукция и статус для предприятия.');
+        return redirect()->route('registry.addhscstatus')->with('info','Успешно добавлена продукция и статус для предприятия.')->with('status','green')->with('header','Действие выполнено');
     }
 }

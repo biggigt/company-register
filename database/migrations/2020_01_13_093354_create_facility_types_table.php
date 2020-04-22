@@ -19,6 +19,7 @@ class CreateFacilityTypesTable extends Migration
             $table->string('facility_type_name');
             $table->timestamps();
         });
+        DB::update("ALTER TABLE facility_types AUTO_INCREMENT = 1000;");
     }
 
     /**

@@ -63,7 +63,7 @@ class CompanyController extends Controller
         $company->subject_acting = $request->get('subject_acting_dropdown');
         $company->subject_owner = $request->get('subject_owner_dropdown');
         $company->save(); //persist the data
-        return redirect()->route('companies.index')->with('info','Company Added Successfully');
+        return redirect()->route('companies.index')->with('info','Предприятие успешно добавлено.')->with('status','green')->with('header','Действие выполнено');
     }
     /**
      * Show the form for editing the specified resource.
@@ -100,13 +100,8 @@ class CompanyController extends Controller
         $company->subject_acting = $request->input('subject_acting');
         $company->subject_owner = $request->input('subject_owner');
         $company->save(); //persist the data
-        $registry = '';
-        if( $request->input('add_to_registry') ) {
-            // there is something for 'test'
-            app(RegistryController::class)->add_to_registry($request->input('id'),2);
-            $registry = 'Company added to registry';
-        }
-        return redirect()->route('companies.index')->with('info','Company Updated Successfully'.$registry);
+
+        return redirect()->route('companies.index')->with('info','Предприятие успешно обновлено.')->with('status','green')->with('header','Действие выполнено');
     }
     /**
      * Remove the specified resource from storage.
@@ -120,7 +115,7 @@ class CompanyController extends Controller
         $company = Company::find($id);
         //delete
         $company->delete();
-        return redirect()->route('companies.indexnew registry();');
+        return redirect()->route('companies.indexnew registry();')->with('info','Предприятие успешно удалено.')->with('status','green')->with('header','Действие выполнено');
     }
     public function add_to_registry(){
 
@@ -153,7 +148,7 @@ class CompanyController extends Controller
         $companyInRegistryStatus->state = "active";
         $companyInRegistryStatus->c_date = $request->input('c_date');
         $companyInRegistryStatus->save();
-        return redirect()->route('registry.include')->with('info','Предприятие успешно добавлено в реестр и ему присвоен статус.');
+        return redirect()->route('registry.include')->with('info','Предприятие успешно добавлено в реестр и ему присвоен статус.')->with('status','green')->with('header','Действие выполнено');
     }
     public function include_company_to_registry(){
         $registry_types = RegistryType::all();

@@ -24,7 +24,7 @@ class RegistryController extends Controller
     	$registryType->registryType = $request->input('registry_type_name');
     	$registryType->registryDescription = $request->input('registry_type_description');
     	$registryType->save();
-    	return redirect()->route('registry.viewtypes')->with('info','Registry type added successfully');
+    	return redirect()->route('registry.viewtypes')->with('info','Вид реестра добавлен успешно.')->with('status','green')->with('header','Действие выполнено');
     }
 
     public function edit($id){
@@ -37,13 +37,13 @@ class RegistryController extends Controller
     	$registryType->registryType = $request->input('registry_type_name');
     	$registryType->registryDescription = $request->input('registry_type_description');
     	$registryType->save();
-    	return redirect()->route('registry.viewtypes')->with('info','Registry type updated successfully');
+    	return redirect()->route('registry.viewtypes')->with('info','Вид реестра обновлен успешно.')->with('status','green')->with('header','Действие выполнено');
     }
 
     public function destroy($id){
     	$registryType = registryType::find($id);
     	$registryType->delete();
-    	return redirect()->route('registry.viewtypes');
+    	return redirect()->route('registry.viewtypes')->with('info','Вид реестра удален успешно.')->with('status','green')->with('header','Действие выполнено');
     }
 
     public function add_to_registry($id,$registryId){
@@ -51,7 +51,7 @@ class RegistryController extends Controller
    		$registry->registryTypeId = $registryId;
    		$registry->companyId = $id;
    		$registry->save();
-   		return redirect()->route('companies.view',['id'=>$id])->with('info','Company added to registry successfully');
+   		return redirect()->route('companies.view',['id'=>$id])->with('info','Company added to registry successfully')->with('status','green')->with('header','Действие выполнено');
     }
 
     public function find_registry($id){

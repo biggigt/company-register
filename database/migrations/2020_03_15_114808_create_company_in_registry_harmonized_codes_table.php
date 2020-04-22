@@ -20,6 +20,7 @@ class CreateCompanyInRegistryHarmonizedCodesTable extends Migration
             $table->string('activity_types');
             $table->timestamps();
         });
+        DB::update("ALTER TABLE company_in_registry_harmonized_codes AUTO_INCREMENT = 1000;");
     }
 
     /**

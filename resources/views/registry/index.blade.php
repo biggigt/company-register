@@ -2,10 +2,11 @@
 @section('title','Предприятия вошедшие в реестр')
 @section('content')
   <div class="ui container">
+
     <table class="ui small compact celled table">
       <thead>
         <tr>
-            <th>Реестр</th>
+            <th>#</th>
             <th>Основная информация</th>
             <th>Хоз субъект, осуществляющий деятельность</th>
             <th>Хоз субъект - владелец</th>
@@ -19,7 +20,7 @@
       </thead>
       @foreach($companies as $company)
         <tr class = "text-center top aligned">
-          <td>{{$company->registryType}}</td>
+          <td>{{ $loop->iteration }}</td>
           <td><b>Номер:</b> {{ $company->regnumber }}<br>
               <b>Название:</b> {{$company->business_code}} "{{$company->name}}"<br>
               <b>Адрес:</b> {{$company->address}}<br>

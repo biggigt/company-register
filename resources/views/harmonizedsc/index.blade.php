@@ -26,8 +26,9 @@
           <td>{{ $harmonizedsc->code }}</td>
           <td>{{ $harmonizedsc->parent_code }}</td>
           <td>{{ $harmonizedsc->hsc_name }}</td>
-          <td><a href="{{route('harmonizedsc.edit',['id'=>$harmonizedsc->id])}}" class = "btn btn-info"><i class="edit outline icon"></i></a>
-            <a href="{{route('harmonizedsc.destroy',['id'=>$harmonizedsc->id])}}" onclick="return confirm('Вы уверены что хотите удалить запись?');" class = "btn btn-danger"><i class="trash alternate outline icon"></i></a>
+          <td>
+            <a href="{{route('harmonizedsc.edit',['id'=>$harmonizedsc->id])}}" class = "btn btn-info"><i class="edit outline icon"></i></a>
+            <a href="{{route('harmonizedsc.destroy',['id'=>$harmonizedsc->id])}}" onclick="return getConfirm(this);" class = "btn btn-danger"><i class="trash alternate outline icon"></i></a>
           </td>
         </tr>
       @endforeach

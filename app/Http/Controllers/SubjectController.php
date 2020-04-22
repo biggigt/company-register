@@ -30,7 +30,7 @@ class SubjectController extends Controller{
         $subject->inn = $request->input('inn');
         $subject->comment = $request->input('comment');
 		$subject->save();
-		return redirect()->route('subject.index')->with('info','Subject added successfully');
+		return redirect()->route('subject.index')->with('info','Субъект добавлен успешно.')->with('status','green')->with('header','Действие выполнено');
 	}
 	public function edit($id){
 		$subject = subject::find($id);
@@ -45,11 +45,11 @@ class SubjectController extends Controller{
         $subject->inn = $request->input('inn');
         $subject->comment = $request->input('comment');
 		$subject->save();
-		return redirect()->route('subject.index')->with('info','Subject updated successfully,');
+		return redirect()->route('subject.index')->with('info','Субъект обновлен успешно.')->with('status','green')->with('header','Действие выполнено');
 	}
 	public function destroy($id){
 		$subject = subject::find($id);
 		$subject->delete();
-		return redirect()->route('subject.index')->with('info','Subject deleted successfully');
+		return redirect()->route('subject.index')->with('info','Субъект удален успешно.')->with('status','green')->with('header','Действие выполнено');
 	}
 }

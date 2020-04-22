@@ -21,6 +21,7 @@ class CreateCountriesTable extends Migration
             $table->string('int');
             $table->timestamps();
         });
+        DB::update("ALTER TABLE countries AUTO_INCREMENT = 1000;");
     }
 
     /**

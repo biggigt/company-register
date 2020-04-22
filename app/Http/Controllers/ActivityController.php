@@ -22,7 +22,7 @@ class ActivityController extends Controller
     	$activity->code = $request->input('activity_code');
     	$activity->activity_type_name = $request->input('activity_type_name');
     	$activity->save();
-    	return redirect()->route('activity.index')->with('info','Вид деятельности предприятий добавлен успешно.');
+    	return redirect()->route('activity.index')->with('info','Вид деятельности предприятий добавлен успешно.')->with('status','green')->with('header','Действие выполнено');
     }
 
     public function edit($id){
@@ -35,12 +35,12 @@ class ActivityController extends Controller
     	$activity->code = $request->input('activity_code');
     	$activity->activity_type_name = $request->input('activity_type_name');
     	$activity->save();
-    	return redirect()->route('activity.index')->with('info','Вид деятельности предприятий обновлен успешно.');
+    	return redirect()->route('activity.index')->with('info','Вид деятельности предприятий обновлен успешно.')->with('status','green')->with('header','Действие выполнено');
     }
 
     public function destroy($id){
     	$activity = activity_type::find($id);
     	$activity->delete();
-    	return redirect()->route('activity.index');
+    	return redirect()->route('activity.index')->with('info','Вид деятельности предприятий удалено успешно.')->with('status','green')->with('header','Действие выполнено');
     }
 }

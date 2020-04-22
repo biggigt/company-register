@@ -19,6 +19,7 @@ class CreateBusinessTypesTable extends Migration
             $table->string('business_type_name');
             $table->timestamps();
         });
+        DB::update("ALTER TABLE business_types AUTO_INCREMENT = 1000;");
     }
 
     /**
