@@ -20,7 +20,8 @@
 <div class="pusher"><div class="full height">
 <div class="toc" style="width:250px;position: fixed;height: 100%;"><div class="ui vertical inverted menu" style="width: 250px;height: 100%;background: #005d9c;border-radius: 0px;overflow: auto;">
 <a class="item" href="/">
-  <b>Реестр предприятий<br>ГИВФБ ПКР</b>
+    <b>Реестр предприятий<br>ГИВФБ ПКР</b>
+    <div class="centered bottom ui basic label">beta</div>
 </a>
 <a class="item" href="/home">
   <b>0.7.5</b>
