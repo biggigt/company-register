@@ -2,3 +2,10 @@ php artisan migrate:refresh --path=database/migrations/2020_01_14_091241_create_
 php artisan migrate --path=database/migrations/2020_01_16_093308_create_business_types_table.php
 
 /usr/bin/php72 /usr/local/bin/composer install
+
+
+commands
+install all dependencies - sudo composer install
+pdo exception - sudo apt-get install php7.0-mysql
+cp .env.example .env
+php artisan key:generate

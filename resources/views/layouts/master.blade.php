@@ -36,6 +36,7 @@
     Внутренний реестр</a>
   </div>
 </div>
+@auth
 <div class="item">
   <div class="header">Предприятия</div>
   <div class="menu">
@@ -91,6 +92,7 @@
       <a class="item" href="/harmonizedsc">Коды ТН ВЭД</a>
   </div>
 </div>
+@endauth
 <div class="item">
 	<div class="ui accordion inverted">
 	  <div class="title">

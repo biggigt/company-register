@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class CompanyInRegistryHarmonizedCode extends Controller
 {
@@ -14,11 +15,11 @@ class CompanyInRegistryHarmonizedCode extends Controller
     public function index()
     {
         $CompanyInRegistryHarmonizedCodes = DB::table('company_in_registry_harmonized_codes')
-                        ->join('registries','registries.id', '=','company_in_registry_harmonized_codes.registries_id')
-                        ->join('companies','companies.id', '=','registries.companyId')
-                        ->join('harmonized_s_c_s','harmonized_s_c_s.id', '=','company_in_registry_harmonized_codes.harmonizedcs_id')
-                        ->select('company_in_registry_harmonized_codes.id','companies.name','companies.regnumber','companies.address','harmonized_s_c_s.code','harmonized_s_c_s.hsc_name')
-                        ->get();
+            ->join('registries', 'registries.id', '=', 'company_in_registry_harmonized_codes.registries_id')
+            ->join('companies', 'companies.id', '=', 'registries.companyId')
+            ->join('harmonized_s_c_s', 'harmonized_s_c_s.id', '=', 'company_in_registry_harmonized_codes.harmonizedcs_id')
+            ->select('company_in_registry_harmonized_codes.id', 'companies.name', 'companies.regnumber', 'companies.address', 'harmonized_s_c_s.code', 'harmonized_s_c_s.hsc_name')
+            ->get();
     }
 
     /**

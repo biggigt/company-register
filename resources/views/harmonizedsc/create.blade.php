@@ -14,10 +14,10 @@
 			<div class="column">
 				<form class="ui form" action="{{route('harmonizedsc.store')}}" method = "post">
 			        @csrf
-			        <div class="field">
-			          <label for="hsc_code">Код ТН ВЭД:</label>
-			          <input type="text" name = "hsc_code" id = "hsc_code" class="form-control" required>
-			        </div>
+						<div class="field">
+							<label for="hsc_code">Код ТН ВЭД:</label>
+			         	<input type="text" name = "hsc_code" id = "hsc_code" class="form-control" required>
+			        	</div>
 			        <div class="field">
 			          <label for="parent_code">Родительский код ТН ВЭД:</label>
 			          <input type="text" name = "parent_code" id = "parent_code" class="form-control" required>

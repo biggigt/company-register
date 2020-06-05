@@ -69,7 +69,7 @@ class RegistryController extends Controller
             ->join('subjects as s2' ,'c.subject_owner', '=','s2.id')
             ->join('company_in_registry_harmonized_codes as rhc','rhc.registries_id', '=','registries.id')
             ->join('harmonized_s_c_s as hsc','hsc.id','=','rhc.harmonizedsc_id')
-            ->join('company_in_registry_statuses as rs','rs.registries_hsc_id', '=','hsc.id')
+            ->join('company_in_registry_statuses as rs','rs.registries_hsc_id', '=','rhc.id')
             ->join('statuses','rs.statuses_id', '=','statuses.id')
             ->select('c.id','bt.code as business_code','c.name','c.regnumber','c.okpo','c.address','ft.facility_type_name','rt.registryType','s1.name as sa_name','s1.address as sa_address','s2.name as so_name','s2.address as so_address','hsc.code as hsc_code','hsc.hsc_name','rhc.activity_types','statuses.code as status_color','statuses.status','rs.countries_id','rs.act','rs.c_date')
             ->where('registries.registryTypeId','=',$id)

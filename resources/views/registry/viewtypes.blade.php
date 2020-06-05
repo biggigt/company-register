@@ -15,9 +15,9 @@
 			<thead>
 				<tr>
 					<th>ID</th>
-					<th>Name</th>
-					<th>Registry description</th>
-					<th>Options</th>
+					<th>Название</th>
+					<th>Описание реестра</th>
+					<th>Действия</th>
 				</tr>
 			</thead>
 			@foreach($registryTypes as $registryType)
