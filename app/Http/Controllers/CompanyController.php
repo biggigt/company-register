@@ -115,7 +115,7 @@ class CompanyController extends Controller
         $company = Company::find($id);
         //delete
         $company->delete();
-        return redirect()->route('companies.indexnew registry();')->with('info','Предприятие успешно удалено.')->with('status','green')->with('header','Действие выполнено');
+        return redirect()->route('companies.index')->with('info','Предприятие успешно удалено.')->with('status','green')->with('header','Действие выполнено');
     }
     public function add_to_registry(){
 
