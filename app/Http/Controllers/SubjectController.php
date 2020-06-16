@@ -10,7 +10,7 @@ use App\business_type;
 
 class SubjectController extends Controller{
 	public function index(){
-		$subjects = Subject::all();
+		$subjects = Subject::with(['subject_types'])->get();
 		return view('subject.index', ['subjects'=>$subjects]);
 	}
 	public function view($id){

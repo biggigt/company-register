@@ -27,7 +27,7 @@
         @foreach($subjects as $subject)
           <tr class = "text-center">
             <td>{{ $subject->id }}</td>
-            <td>{{ $subject->subject_type }} "{{ $subject->name }}"</td>
+            <td>{{ $subject->subject_types->code }} "{{ $subject->name }}"</td>
             <td>{{ $subject->address }}</td>
             <td>{{ $subject->coate }}</td>
             <td>{{ $subject->inn }}</td>

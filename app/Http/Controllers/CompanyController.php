@@ -26,7 +26,7 @@ class CompanyController extends Controller
     public function index()
     {
         //Show all companies from the database and return to view
-        $companies = Company::all();
+        $companies = Company::with(['business_types','facility_types','subject_owners','subject_actings'])->get();
         return view('company.index',['companies'=>$companies]);
     }
     /**

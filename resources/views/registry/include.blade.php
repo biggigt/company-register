@@ -10,6 +10,12 @@
 			  Добавить в реестр
 			</a>
 		</div>
+    <div class="ui message">
+        <div class="header">
+          Порядок добавления данных
+        </div>
+        <p>Предприятие вносится в реестр только после того как создан субъект и создано предприятие которое привязано к этому субъекту. Будьте внимательны!</p>
+      </div>
 		<div class="ui two column centered grid">
 			<div class="column">
 				<form class="ui form" action="{{route('registry.include')}}" method = "post">

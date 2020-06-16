@@ -30,12 +30,13 @@
   <div class="header">Реестры</div>
   <div class="menu">
 	<a class="item" href="/registry/view">Последние добавленные</a>
-  	<a class="item" href="/registry/view/1">
+  	<a class="item" href="/registry/view/1000">
     ЕАЭС</a>
-  	<a class="item" href="/registry/view/2">
+  	<a class="item" href="/registry/view/1001">
     Внутренний реестр</a>
   </div>
 </div>
+<?php if(auth()->guard()->check()): ?>
 <div class="item">
   <div class="header">Предприятия</div>
   <div class="menu">
@@ -91,6 +92,7 @@
       <a class="item" href="/harmonizedsc">Коды ТН ВЭД</a>
   </div>
 </div>
+<?php endif; ?>
 <div class="item">
 	<div class="ui accordion inverted">
 	  <div class="title">

@@ -15,31 +15,31 @@
       <form class="ui form" action="{{route('subject.update')}}" method = "post">
         @csrf
         <div class="field">
-          <label for="subject_type">Subject type:</label>
+          <label for="subject_type">ОПФ:</label>
           <input type="text" name = "subject_type" id = "subject_type" class="form-control" required value = "{{$subject->subject_type}}">
         </div>
         <div class="field">
-          <label for="name">Name:</label>
+          <label for="name">Название/ФИО:</label>
           <input type="text" name = "name" id = "name" class="form-control" required value = "{{$subject->name}}">
         </div>
         <div class="field">
-          <label for="address">Address:</label>
+          <label for="address">Полный адрес:</label>
           <input type="text" name = "address" id = "address" class="form-control" required value = "{{$subject->address}}">
         </div>
         <div class="field">
-          <label for="coate">Coate:</label>
+          <label for="coate">Код Coate:</label>
           <input type="text" name = "coate" id = "coate" class="form-control" value = "{{$subject->coate}}">
         </div>
         <div class="field">
-          <label for="inn">INN:</label>
+          <label for="inn">ИНН:</label>
           <input type="text" name = "inn" id = "inn" class="form-control" value = "{{$subject->inn}}">
         </div>
         <div class="field">
-          <label for="comment">Comment:</label>
+          <label for="comment">Комментарий:</label>
           <input type="text" name = "comment" id = "comment" class="form-control" value = "{{$subject->comment}}">
         </div>
         <input type="hidden" name="id" value = "{{$subject->id}}">
-        <button type = "submit" class = "ui button">Submit</button>
+        <button type = "submit" class = "ui button">Сохранить</button>
       </form>
     </div>
   </div>

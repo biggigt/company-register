@@ -10,6 +10,12 @@
                 Добавить в реестр
             </a>
         </div>
+        <div class="ui message">
+            <div class="header">
+            Порядок внесения данных
+            </div>
+            <p>В данной форме можно обновить статус для предприятия которое находится в реестре путем добавления нового статуса. Старый статус будет считаться не активным.</p>
+        </div>
         <div class="ui two column centered grid">
             <div class="column">
                 <form class="ui form" action="{{route('registry.addstatus')}}" method = "post">
