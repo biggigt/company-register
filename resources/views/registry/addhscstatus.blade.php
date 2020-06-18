@@ -25,7 +25,7 @@
                         <select name = "registry_record" id = "registry_record" class="ui search dropdown" required>
                             <option value="">Выберите запись</option>
                             @foreach($registry_records as $registry_record)
-                                <option value="{{ $registry_record->id }}">{{$registry_record->registry->registryType}} -> {{ $registry_record->company }} -> {{ $registry_record->company }}</option>
+                                <option value="{{ $registry_record->id }}">{{$registry_record->registry->registryType}} -> {{ !empty($registry_record->company->regnumber) ? $registry_record->company->regnumber:'' }} -> {{ !empty($registry_record->company->name) ? $registry_record->company->name:'' }}</option>
                             @endforeach
                         </select>
                     </div>
