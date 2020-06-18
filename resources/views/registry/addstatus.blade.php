@@ -26,7 +26,7 @@
                             <option value="">Выберите запись</option>
                             @foreach($registry_record_with_products as $registry_record_with_product)
                                 @foreach($registry_record_with_product->registry_hsc as $registry_hsc)
-                                    <option value="{{ $registry_hsc->id }}">{{$registry_record_with_product->registry->registryType}} -> {{ $registry_record_with_product->company->regnumber }} -> {{ $registry_record_with_product->company->name }} -> {{ $registry_hsc->harmonizedsc_id }}</option>
+                                    <option value="{{ $registry_hsc->id }}">{{$registry_record_with_product->registry->registryType}} -> {{ !empty($registry_record_with_product->company->regnumber) ? $registry_record_with_product->company->regnumber:'' }} -> {{ !empty($registry_record_with_product->company->name) ? $registry_record_with_product->company->name:'' }} -> {{ $registry_hsc->harmonizedsc_id }}</option>
                                 @endforeach
                             @endforeach
                         </select>
