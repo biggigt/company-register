@@ -43,8 +43,8 @@
         </tr>
       @endforeach
         <tfoot>
-        <tr><th>-</th>
-            <th>-</th>
+        <tr><th>{{$companies->total()}}</th>
+            <th>Всего записей в текущем реестре</th>
             <th></th>
             <th></th>
             <th></th>
@@ -55,5 +55,6 @@
             @endguest
         </tr></tfoot>
     </table>
+    {{ $companies->links('vendor.pagination.semantic-ui') }}
   </div>
 @endsection

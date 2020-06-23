@@ -9,7 +9,7 @@ use App\business_type;
 class BusinesstypeController extends Controller
 {
     public function index(){
-    	$business_types = business_type::all();
+    	$business_types = business_type::paginate(10);
     	return view('businesstype.index',['business_types'=>$business_types]);
     }
 
