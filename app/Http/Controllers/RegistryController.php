@@ -74,7 +74,7 @@ class RegistryController extends Controller
             ->select('c.id','bt.code as business_code','c.name','c.regnumber','c.okpo','c.address','ft.facility_type_name','rt.registryType','s1.name as sa_name','s1.address as sa_address','s2.name as so_name','s2.address as so_address','hsc.code as hsc_code','hsc.hsc_name','rhc.activity_types','statuses.code as status_color','statuses.status','rs.countries_id','rs.act','rs.c_date')
             ->where('registries.registryTypeId','=',$id)
             ->where('rs.state','=','active')
-            ->paginate(15);
+            ->paginate(10);
         return view('registry.index', ['companies' => $companies]);
     }
 }
